@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('w11k.slides').directive('prettyPrint', function ($window) {
+angular.module('w11k.slides').directive('w11kPrettyPrint', function ($window) {
   return {
     restrict: 'A',
     link: function () {
