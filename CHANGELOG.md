@@ -1,3 +1,13 @@
+<a name="0.1.3"></a>
+## 0.1.3 (2014-03-06)
+
+
+### Bug Fixes
+
+* **slides:** fixes vertical align not working because of missing height ([68d68d9e](https://github.com/pburgmer/w11k-slides/commit/68d68d9ede67da913fd4ca2dce6ca1e68789a098))
+* **release:** removes prettypring.scss withoud underscore ([20dfef6](https://github.com/pburgmer/w11k-slides/commit/20dfef6a886cca9e94de4ec0dc8f8c4c7974f3ba))
+
+
 <a name="0.1.2"></a>
 ## 0.1.2 (2014-03-05)
 
