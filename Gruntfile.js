@@ -76,7 +76,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: 'dist/',
-            src: '*',
+            src: '**/*',
             dest: '../w11k-slides-bower/dist/'
           },
           {
