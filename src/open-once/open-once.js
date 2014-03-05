@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('w11k.slides').directive('openOnce', function ($window, UnloadConfirm) {
+angular.module('w11k.slides').directive('w11kOpenOnce', function ($window, UnloadConfirm) {
   return {
     restrict: 'A',
     scope: { name: '@' },
