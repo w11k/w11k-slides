@@ -6,6 +6,7 @@ angular.module("demo").constant('slidesConfig', {
   slides: [
     'title',
     'about',
+    'usage',
     'end'
   ],
   slideTemplatePrefix: 'slides/'
