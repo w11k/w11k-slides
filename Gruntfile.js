@@ -88,7 +88,7 @@ module.exports = function (grunt) {
     html2js: {
       template: {
         options: {
-          base: 'src/',
+          base: 'src',
           module: 'w11k.slides.template',
           quoteChar: '\'',
           htmlmin: {
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/w11k-slides.tpl.js': 'src/w11k-slides.tpl.html'
+          'dist/w11k-slides.tpl.js': 'src/slides/slides.tpl.html'
         }
       }
     },

@@ -1,0 +1,60 @@
+@media screen {
+  .screen {
+    .slides {
+      height: 100%;
+      // avoid horizontal scroll bar
+      max-width: 99.9999%;
+
+      > div {
+        display: table;
+        height: 100%;
+        width: 100%;
+
+        > div {
+          display: table-row;
+          height: 100%;
+          width: 100%;
+
+          > * {
+            display: table-cell;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .slide {
+      ul {
+        list-style: none;
+      }
+
+      ul, ol {
+        margin-left: 0;
+      }
+
+      ul li ul, ol li ol {
+        margin-left: 1em;
+      }
+
+      li {
+        color: $secondaryColor;
+        padding-left: 1em;
+        margin-bottom: 0.3em;
+      }
+
+      ul li:before {
+        content: "▸";
+        color: $primaryColor;
+        margin-right: 0.5em;
+        margin-left: -1em;
+      }
+
+
+      li ul li:before {
+        content: "▪";
+        color: $secondaryColor;
+      }
+    }
+  }
+}

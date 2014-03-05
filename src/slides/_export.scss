@@ -1,0 +1,48 @@
+@media screen {
+  .export {
+
+    -webkit-print-color-adjust:exact;
+
+    .slides {
+
+      > div {
+        page-break-before: always;
+        display: table !important;
+        width: 298mm;
+        height: 210mm;
+
+        > div {
+          display: table-row;
+          height: 100%;
+          width: 100%;
+
+          > * {
+            display: table-cell;
+            height: 100%;
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    .slide {
+      a[href]:after {
+        content:"";
+      }
+
+      a[href^="http"]:after {
+        content:" (" attr(href) ")";
+        font-size: 0.7em;
+        font-weight: normal;
+      }
+
+      ul {
+        list-style: square;
+
+        ul {
+          list-style: disc;
+        }
+      }
+    }
+  }
+}
