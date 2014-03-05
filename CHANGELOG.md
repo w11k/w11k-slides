@@ -1,3 +1,15 @@
+<a name="0.1.1"></a>
+## 0.1.1 (2014-03-05)
+
+
+#### Bug Fixes
+
+* **bower:** add missing dependency to google-code-prettify ([c0845826](https://github.com/pburgmer/w11k-slides/commit/c0845826e3c5590144c8ab4d6dbd245ade06a6ce))
+* **build:** include files in subfolders of dist ([1a17c7aa](https://github.com/pburgmer/w11k-slides/commit/1a17c7aabaa1b941e8f1a9e526621fdce455ae81))
+* **open-once:** prefix directive with w11k to avoid name collisions ([9415c890](https://github.com/pburgmer/w11k-slides/commit/9415c890df1dbf08f69540e1f3b545f8695f1cdb))
+* **pretty-print:** prefix directive with w11k to avoid name collisions ([a6c99a4e](https://github.com/pburgmer/w11k-slides/commit/a6c99a4ebf3f04bf91598be7b79988aaab17ec06))
+
+
 <a name="0.1.0"></a>
 ## 0.1.0 (2014-03-05)
 
