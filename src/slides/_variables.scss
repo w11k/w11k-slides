@@ -11,9 +11,7 @@ $titleBottomBackgroundColor: transparent !default;
 $headerBackground: $primaryColor !default;
 $headerTextColor: white !default;
 $headerBorderColor: $secondaryColor !default;
-$headerLogo: none;
+$headerLogo: none !default;
 
 $blockquoteBorderColor: #999 !default;
 $blockquoteCizeTextColor: #999 !default;
-
-$exampleShownTextColor: #ccc !default;
