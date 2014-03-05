@@ -1,8 +1,18 @@
+<a name="0.1.2"></a>
+## 0.1.2 (2014-03-05)
+
+
+### Bug Fixes
+
+* **open-once:** extract styling from slides ([85b49e80](https://github.com/pburgmer/w11k-slides/commit/85b49e805f245250b8c1bfa14417c3f1d52ef204))
+* **pretty-print:** strength css selector to be stronger then bootstraps list selectors ([c97a46ae](https://github.com/pburgmer/w11k-slides/commit/c97a46aef00427c609a2ed228a0bde4de9bdccf5))
+
+
 <a name="0.1.1"></a>
 ## 0.1.1 (2014-03-05)
 
 
-#### Bug Fixes
+### Bug Fixes
 
 * **bower:** add missing dependency to google-code-prettify ([c0845826](https://github.com/pburgmer/w11k-slides/commit/c0845826e3c5590144c8ab4d6dbd245ade06a6ce))
 * **build:** include files in subfolders of dist ([1a17c7aa](https://github.com/pburgmer/w11k-slides/commit/1a17c7aabaa1b941e8f1a9e526621fdce455ae81))
