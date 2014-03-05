@@ -1,0 +1,13 @@
+{
+  "name": "w11k-slides",
+  "version": "0.1.0",
+  "description": "AngularJS module to create simple slide shows",
+  "keywords": [ "angular", "angularjs", "slides", "slide-show", "presentation" ],
+
+  "dependencies": {
+    "angular": "1.2.x",
+    "bootstrap": "3.1.0"
+  },
+  "devDependencies": {
+  }
+}

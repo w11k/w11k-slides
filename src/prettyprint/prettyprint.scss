@@ -1,0 +1,58 @@
+$lineColor: #EAEAEA;
+
+.com { color: #93a1a1; }
+.lit { color: #195f91; }
+.pun, .opn, .clo { color: #93a1a1; }
+.fun { color: #dc322f; }
+.str, .atv { color: #D14; }
+.kwd, .linenums .tag { color: #1e347b; }
+.typ, .atn, .dec, .var { color: teal; }
+.pln { color: #48484c; }
+
+.slide .prettyprint {
+  padding: 0;
+  background-color: #fff;
+  border: 0.1em solid darken($lineColor, 5%);
+  border-radius: 0.2em;
+}
+
+ol.linenums {
+    counter-reset: li; /* Initiate a counter */
+    list-style: none; /* Remove default numbering */
+    padding: 0;
+    margin: 0 !important;
+}
+
+ol.linenums li {
+    padding: 0;
+    margin: 0;
+}
+
+ol.linenums li code {
+    position: relative;
+    display: block;
+    padding: .2em .5em;
+    margin: 0 0 0 2em;
+    background-color: $lineColor;
+    border-radius: 0;
+    border-left: 0.1em solid darken($lineColor, 5%);
+    min-height: 1.4em;
+}
+
+ol.linenums li:nth-child(even) code {
+    background-color: darken($lineColor, 5%);
+}
+
+ol.linenums li code:hover {
+    background: darken($lineColor, 20%);
+}
+
+ol.linenums li code:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2em;
+    width: 1.5em;
+    text-align: right;
+    color: darken($lineColor, 5%);
+}
