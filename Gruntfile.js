@@ -70,20 +70,6 @@ module.exports = function (grunt) {
           src: '**/*.scss',
           dest: 'dist'
         }]
-      },
-      release: {
-        files: [
-          {
-            expand: true,
-            cwd: 'dist/',
-            src: '**/*',
-            dest: '../w11k-slides-bower/dist/'
-          },
-          {
-            src: 'bower.json',
-            dest: '../w11k-slides-bower/'
-          }
-        ]
       }
     },
     html2js: {
@@ -153,6 +139,5 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', ['clean', 'jshint:src', 'sass', 'copy:template', 'copy:sass', 'html2js', 'uglify']);
   grunt.registerTask('demo', ['build', 'connect:demo']);
-  grunt.registerTask('release', ['build', 'copy:release']);
 
 };
