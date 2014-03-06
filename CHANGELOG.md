@@ -1,3 +1,12 @@
+<a name="0.1.4"></a>
+## 0.1.4 (2014-03-06)
+
+
+### Bug Fixes
+
+* **Dependency Injection:** use array notation to survive code minimization ([4ab4330b](https://github.com/pburgmer/w11k-slides/commit/4ab4330be4bfc1253076fe34ad3c4bedbf179cc7))
+
+
 <a name="0.1.3"></a>
 ## 0.1.3 (2014-03-06)
 
