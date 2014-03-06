@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('w11k.slides').directive('w11kOpenOnce', function ($window, UnloadConfirm) {
+angular.module('w11k.slides').directive('w11kOpenOnce', ['$window', 'UnloadConfirm', function ($window, UnloadConfirm) {
   return {
     restrict: 'A',
     scope: { name: '@' },
@@ -23,4 +23,4 @@ angular.module('w11k.slides').directive('w11kOpenOnce', function ($window, Unloa
       });
     }
   };
-});
+}]);

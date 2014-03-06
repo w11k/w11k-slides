@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('w11k.slides').service('UnloadConfirm', function ($window) {
+angular.module('w11k.slides').service('UnloadConfirm', ['$window', function ($window) {
   var service = {
     counter: 0,
 
@@ -28,4 +28,4 @@ angular.module('w11k.slides').service('UnloadConfirm', function ($window) {
 
   return service;
 
-});
+}]);

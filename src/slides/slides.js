@@ -4,7 +4,7 @@ angular.module('w11k.slides').constant('slidesConfig', {
   slides: []
 });
 
-angular.module('w11k.slides').factory('SlidesService', function (slidesConfig, $location, $rootScope) {
+angular.module('w11k.slides').factory('SlidesService', ['slidesConfig', '$location', '$rootScope', function (slidesConfig, $location, $rootScope) {
   var activeSlide;
 
   function activateFirstSlide() {
@@ -97,65 +97,68 @@ angular.module('w11k.slides').factory('SlidesService', function (slidesConfig, $
       $location.path(slides[1].name);
     }
   };
-});
+}]);
 
-angular.module('w11k.slides').controller('SlidesCtrl', function ($scope, SlidesService) {
+angular.module('w11k.slides').controller('SlidesCtrl', ['$scope', 'SlidesService', function ($scope, SlidesService) {
   $scope.slides = SlidesService.getSlides();
-});
+}]);
 
-angular.module('w11k.slides').directive('w11kSlides', function ($location, $document, SlidesService, $rootScope, slidesConfig) {
-  return {
-    restrict: 'EA',
-    templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
-    replace: true,
-    link: function () {
+angular.module('w11k.slides').directive('w11kSlides', [
+  '$location', '$document', 'SlidesService', '$rootScope', 'slidesConfig',
+  function ($location, $document, SlidesService, $rootScope, slidesConfig) {
+    return {
+      restrict: 'EA',
+      templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
+      replace: true,
+      link: function () {
 
-      var goToNext = function () {
-        var next = SlidesService.getActiveSlide().next;
-        if (angular.isDefined(next)) {
-          SlidesService.navigateTo(next.name);
-        }
-      };
+        var goToNext = function () {
+          var next = SlidesService.getActiveSlide().next;
+          if (angular.isDefined(next)) {
+            SlidesService.navigateTo(next.name);
+          }
+        };
 
-      var goToPrevious = function () {
-        var previous = SlidesService.getActiveSlide().previous;
-        if (angular.isDefined(previous)) {
-          SlidesService.navigateTo(previous.name);
-        }
-      };
+        var goToPrevious = function () {
+          var previous = SlidesService.getActiveSlide().previous;
+          if (angular.isDefined(previous)) {
+            SlidesService.navigateTo(previous.name);
+          }
+        };
 
-      $document.bind('keydown', function (event) {
-        // right
-        if (event.keyCode === 39) {
-          $rootScope.$apply(function () {
-            goToNext();
-          });
-        }
-        // left
-        else if (event.keyCode === 37) {
-          $rootScope.$apply(function () {
-            goToPrevious();
-          });
-        }
-        // pos 1
-        else if (event.keyCode === 36) {
-          $rootScope.$apply(function () {
-            SlidesService.navigateToFirst();
-          });
-        }
-        // end
-        else if (event.keyCode === 35) {
-          $rootScope.$apply(function () {
-            SlidesService.navigateToLast();
-          });
-        }
-        // o
-        else if (event.keyCode === 79) {
-          $rootScope.$apply(function () {
-            SlidesService.navigateToOverview();
-          });
-        }
-      });
-    }
-  };
-});
+        $document.bind('keydown', function (event) {
+          // right
+          if (event.keyCode === 39) {
+            $rootScope.$apply(function () {
+              goToNext();
+            });
+          }
+          // left
+          else if (event.keyCode === 37) {
+            $rootScope.$apply(function () {
+              goToPrevious();
+            });
+          }
+          // pos 1
+          else if (event.keyCode === 36) {
+            $rootScope.$apply(function () {
+              SlidesService.navigateToFirst();
+            });
+          }
+          // end
+          else if (event.keyCode === 35) {
+            $rootScope.$apply(function () {
+              SlidesService.navigateToLast();
+            });
+          }
+          // o
+          else if (event.keyCode === 79) {
+            $rootScope.$apply(function () {
+              SlidesService.navigateToOverview();
+            });
+          }
+        });
+      }
+    };
+  }
+]);
