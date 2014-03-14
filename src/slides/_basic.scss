@@ -21,6 +21,10 @@ html, body {
     padding-right: 12em;
   }
 
+  &.vcenter {
+    @include vcenter;
+  }
+
   h1 {
     color: $titleTopTextColor;
     font-size: 2.5em;
@@ -124,6 +128,11 @@ html, body {
   }
   a:hover, a:focus {
     text-decoration: underline;
+  }
+
+  pre.prettyprint.linenums ol.linenums>li:before {
+    content: '';
+    margin: 0;
   }
 
   &.title {
