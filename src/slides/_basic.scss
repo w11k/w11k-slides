@@ -21,6 +21,10 @@ html, body {
     padding-right: 12em;
   }
 
+  &.vcenter {
+    @include vcenter;
+  }
+
   h1 {
     color: $titleTopTextColor;
     font-size: 2.5em;
@@ -126,85 +130,8 @@ html, body {
     text-decoration: underline;
   }
 
-  &.title {
-    vertical-align: middle;
-    text-align: center;
-    padding: 0;
-
-    div.logo {
-      position: relative;
-      background-color: #fff;
-      height: 25%;
-      padding: 2em;
-      border-bottom: 0.4em solid $titleSeparatorColor;
-    }
-
-    div.logo img {
-      height: 3em;
-    }
-
-    div.content {
-      background-color: $titleBottomBackgroundColor;
-      color: $titleBottomTextColor;
-      padding-top: 2em;
-
-      h1 {
-        color: $titleBottomTextColor;
-      }
-    }
-
-    div.content img {
-      margin-top: 0.5em;
-      margin-bottom: 0.5em;
-    }
-  }
-
-  &.end {
-    text-align: center;
-    vertical-align: middle;
-    font-size: 2em;
-  }
-
-  .conclusion {
-    font-size: 2em;
-    font-weight: bold;
-    color: $secondaryColor;
-    text-align: center;
-    margin-top: 1em;
-  }
-
-  &.eco-system {
-    .row {
-      margin-bottom: 1em;
-    }
-
-    .tool {
-      display: table;
-      text-align: center;
-
-      div.logo {
-        display: table-cell;
-        height: 9em;
-        vertical-align: middle;
-
-        a {
-          img {
-            max-height: 6em;
-            max-width: 6em;
-            margin: auto;
-            display: block;
-          }
-        }
-
-        a:after {
-          display: block;
-        }
-      }
-
-
-      div.description {
-        display: table-row;
-      }
-    }
+  pre.prettyprint.linenums ol.linenums>li:before {
+    content: '';
+    margin: 0;
   }
 }

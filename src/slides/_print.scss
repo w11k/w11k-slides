@@ -68,23 +68,5 @@
       border-color: #fff;
       font-size: 0.6em;
     }
-
-    &.eco-system {
-      .row {
-        margin-bottom: 1em;
-        page-break-inside: avoid;
-      }
-
-      .tool {
-
-        div.logo {
-          height: 6em;
-          a {
-            max-height: 4em;
-            max-width: 4em;
-          }
-        }
-      }
-    }
   }
 }

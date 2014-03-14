@@ -1,0 +1,44 @@
+@mixin vcenter {
+  vertical-align: middle;
+  text-align: center;
+}
+
+@mixin keep-together {
+  break-inside: avoid-column;
+  column-break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+}
+
+@mixin dyn-multi-column($cols-xs: 1, $cols-sm: 2, $cols-md: 3, $cols-lg: 4, $gap: 2em) {
+  @media (max-width: $screen-xs) {
+    -moz-column-count: $cols-xs;
+    -webkit-column-count: $cols-xs;
+    column-count: $cols-xs;
+  }
+
+  @media (min-width: $screen-sm) and (max-width: $screen-sm-max) {
+    -moz-column-count: $cols-sm;
+    -webkit-column-count: $cols-sm;
+    column-count: $cols-sm;
+  }
+
+  @media (min-width: $screen-md) and (max-width: $screen-md-max) {
+    -moz-column-count: $cols-md;
+    -webkit-column-count: $cols-md;
+    column-count: $cols-md;
+  }
+
+  @media (min-width: $screen-lg) {
+    -moz-column-count: $cols-lg;
+    -webkit-column-count: $cols-lg;
+    column-count: $cols-lg;
+  }
+
+  -moz-column-gap: $gap;
+  -webkit-column-gap: $gap;
+  column-gap: $gap;
+
+  & .keep-together {
+    @include keep-together;
+  }
+}
