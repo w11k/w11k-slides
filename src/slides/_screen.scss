@@ -31,23 +31,27 @@
         list-style: none;
       }
 
-      ul, ol {
+      ul {
         margin-left: 0;
+
+        li {
+          padding-left: 1em;
+        }
+
+        li:before {
+          content: "▸";
+          color: $primaryColor;
+          margin-right: 0.5em;
+          margin-left: -1em;
+        }
       }
 
-      li {
-        color: $secondaryColor;
-        padding-left: 1em;
-        margin-bottom: 0.3em;
+      ul, ol {
+        li {
+          color: $secondaryColor;
+          margin-bottom: 0.3em;
+        }
       }
-
-      ul li:before {
-        content: "▸";
-        color: $primaryColor;
-        margin-right: 0.5em;
-        margin-left: -1em;
-      }
-
 
       li ul li:before {
         content: "▪";

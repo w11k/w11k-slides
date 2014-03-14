@@ -1,3 +1,12 @@
+<a name="0.2.1"></a>
+## 0.2.1 (2014-03-14)
+
+
+### Bug Fixes
+
+* **styling:** fixe styling of ordered lists ([39f6cf62](https://github.com/pburgmer/w11k-slides/commit/39f6cf624c8510a367cde8277271658dd8f897cd))
+
+
 <a name="0.2.0"></a>
 ## 0.2.0 (2014-03-14)
 
