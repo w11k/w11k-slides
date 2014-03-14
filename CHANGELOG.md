@@ -1,3 +1,14 @@
+<a name="0.2.0"></a>
+## 0.2.0 (2014-03-14)
+
+
+### Features
+
+* **styling:**
+  * removes content specific styling ([7c335d42](https://github.com/pburgmer/w11k-slides/commit/7c335d4213158b42a0f8415ad8009e53ba38f424))
+  * back ports generic styling of various slide shows ([a390abcd](https://github.com/pburgmer/w11k-slides/commit/a390abcd29eb02f8660e8c43a590b364afd6fa58))
+
+
 <a name="0.1.4"></a>
 ## 0.1.4 (2014-03-06)
 
