@@ -1,3 +1,17 @@
+<a name="0.3.0"></a>
+## 0.3.0 (2014-04-28)
+
+
+### Bug Fixes
+
+* **pretty-print:** prettify code blocks once only ([4f6bbeee](https://github.com/pburgmer/w11k-slides/commit/4f6bbeee7c11bb7597629955b30145e82f374b56))
+
+
+### Features
+
+* **export:** toggle export and presentation view by pressing e, define export view as default ([43816c3a](https://github.com/pburgmer/w11k-slides/commit/43816c3a9d1241aff663434c0c2e485bb05af64b))
+
+
 <a name="0.2.1"></a>
 ## 0.2.1 (2014-03-14)
 
