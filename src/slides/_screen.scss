@@ -1,27 +1,24 @@
 @media screen {
-  .screen {
-    height: 100%;
+  .slides.screen {
 
-    .slides {
+    height: 100%;
+    // avoid horizontal scroll bar
+    max-width: 99.9999%;
+
+    > div {
+      display: table;
       height: 100%;
-      // avoid horizontal scroll bar
-      max-width: 99.9999%;
+      width: 100%;
 
       > div {
-        display: table;
+        display: table-row;
         height: 100%;
         width: 100%;
 
-        > div {
-          display: table-row;
+        > * {
+          display: table-cell;
           height: 100%;
           width: 100%;
-
-          > * {
-            display: table-cell;
-            height: 100%;
-            width: 100%;
-          }
         }
       }
     }

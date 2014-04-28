@@ -1,26 +1,23 @@
 @media screen {
-  .export {
+  .slides.export {
 
     -webkit-print-color-adjust:exact;
 
-    .slides {
+    > div {
+      page-break-before: always;
+      display: table !important;
+      width: 298mm;
+      height: 210mm;
 
       > div {
-        page-break-before: always;
-        display: table !important;
-        width: 298mm;
-        height: 210mm;
+        display: table-row;
+        height: 100%;
+        width: 100%;
 
-        > div {
-          display: table-row;
+        > * {
+          display: table-cell;
           height: 100%;
           width: 100%;
-
-          > * {
-            display: table-cell;
-            height: 100%;
-            width: 100%;
-          }
         }
       }
     }
