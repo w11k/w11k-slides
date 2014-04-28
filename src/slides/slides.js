@@ -110,7 +110,7 @@ angular.module('w11k.slides').directive('w11kSlides', [
       restrict: 'EA',
       templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
       replace: true,
-      link: function () {
+      link: function (scope, element) {
 
         var goToNext = function () {
           var next = SlidesService.getActiveSlide().next;
@@ -155,6 +155,13 @@ angular.module('w11k.slides').directive('w11kSlides', [
           else if (event.keyCode === 79) {
             $rootScope.$apply(function () {
               SlidesService.navigateToOverview();
+            });
+          }
+          // e
+          else if (event.keyCode === 69) {
+            $rootScope.$apply(function () {
+              element.toggleClass('export');
+              element.toggleClass('screen');
             });
           }
         });
