@@ -1,14 +1,16 @@
-<div class="slide about-me" w11k-pretty-print>
+<div class="slide about-me">
   <div class="header">
     <h2>Usage</h2>
   </div>
-  
-<pre class="prettyprint linenums lang-html" ng-non-bindable><code>&lt;div class="screen"&gt;
-  &lt;div w11k-slides&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
 
-<pre class="prettyprint linenums lang-js" ng-non-bindable><code>angular.module("demo").constant('slidesConfig', {
+<pre w11k-pretty-print lang="html">
+&lt;body&gt;
+  &lt;div w11k-slides&gt;&lt;/div&gt;
+&lt;/body&gt;
+</pre>
+
+<pre w11k-pretty-print lang="js">
+angular.module("demo").constant('slidesConfig', {
   slides: [
     'title',
     'about',
@@ -17,6 +19,6 @@
   slideTemplatePrefix: 'slides/',
   slideTemplateSuffix: '.tpl.html'
 });
-</code></pre>
+</pre>
 
 </div>
