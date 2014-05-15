@@ -129,9 +129,4 @@ html, body {
   a:hover, a:focus {
     text-decoration: underline;
   }
-
-  pre.prettyprint.linenums ol.linenums>li:before {
-    content: '';
-    margin: 0;
-  }
 }

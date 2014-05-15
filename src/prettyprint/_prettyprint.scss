@@ -25,7 +25,7 @@ pre.prettyprint {
       padding: 0;
       margin: 0;
 
-      & > code {
+      & {
         position: relative;
         display: block;
         padding: .2em .5em;
@@ -36,11 +36,7 @@ pre.prettyprint {
         min-height: 1.4em;
       }
 
-      & > code:hover {
-        background: darken($lineColor, 20%);
-      }
-
-      & > code:before {
+      &:before {
         content: counter(li);
         counter-increment: li;
         position: absolute;
@@ -49,10 +45,19 @@ pre.prettyprint {
         text-align: right;
         color: darken($lineColor, 5%);
       }
+
+      &:nth-child(even) {
+        background-color: darken($lineColor, 5%);
+      }
+
+      &:hover, &:nth-child(even):hover  {
+        background-color: darken($lineColor, 20%);
+      }
+
+      &:hover:before, &:nth-child(even):hover:before  {
+        color: darken($lineColor, 30%);
+      }
     }
 
-    & > li:nth-child(even) code {
-      background-color: darken($lineColor, 5%);
-    }
   }
 }
