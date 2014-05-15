@@ -1,3 +1,27 @@
+<a name="0.4.0"></a>
+## 0.4.0 (2014-05-15)
+
+
+### Features
+
+* **prettyprint:** improve pretty-print directive to work with unescaped html ([e049ea02](https://github.com/pburgmer/w11k-slides/commit/e049ea022b0a5525f94c8b3e8b54efb54fcfe135))
+
+
+### Breaking Changes
+
+* w11k-pretty-print directive now has to be placed at the element containing the code ([e049ea02](https://github.com/pburgmer/w11k-slides/commit/e049ea022b0a5525f94c8b3e8b54efb54fcfe135))
+
+  Example:
+  
+  ```
+  <pre w11k-pretty-print lang="html">
+  <body>
+    <div w11k-slides></div>
+  </body>
+  </pre>
+  ```
+
+
 <a name="0.3.0"></a>
 ## 0.3.0 (2014-04-28)
 
