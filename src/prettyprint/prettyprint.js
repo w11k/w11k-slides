@@ -12,6 +12,7 @@ angular.module('w11k.slides').directive('w11kPrettyPrint', ['$window', '$documen
 
   return {
     restrict: 'A',
+    terminal: true,
     compile: function (tElement, tAttrs) {
       if (angular.isFunction($window.prettyPrintOne)) {
         var html = tElement.html();

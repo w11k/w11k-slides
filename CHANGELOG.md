@@ -1,3 +1,14 @@
+# w11k-slides Changelog
+
+<a name="0.4.1"></a>
+## 0.4.1 (2014-05-15)
+
+
+### Bug Fixes
+
+* **prettyprint:** make directive terminal to not evaluate directives and expressions on content ([0bf32566](https://github.com/pburgmer/w11k-slides/commit/0bf32566f7d11fb3870457d2476128f92c9869a4))
+
+
 <a name="0.4.0"></a>
 ## 0.4.0 (2014-05-15)
 
