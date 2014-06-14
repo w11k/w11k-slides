@@ -1,5 +1,15 @@
 # w11k-slides Changelog
 
+<a name="0.4.2"></a>
+## 0.4.2 (2014-06-15)
+
+
+### Bug Fixes
+
+* **open-once:** read w11k-open-once attribute instead of open-once ([15b2862f](https://github.com/pburgmer/w11k-slides/commit/15b2862f8029669b8cd2281bca073cac1263b32b))
+* **slides:** apply some styling fixes from ionic tutorial ([ff01bb2c](https://github.com/pburgmer/w11k-slides/commit/ff01bb2c71304780915787da10dc860eedd5801f))
+
+
 <a name="0.4.1"></a>
 ## 0.4.1 (2014-05-15)
 
