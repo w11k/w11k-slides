@@ -88,6 +88,7 @@ html, body {
 
   code {
     color: #888;
+    background-color: $lineColor;
   }
 
   blockquote {
@@ -122,11 +123,23 @@ html, body {
     background: #c00;
     color: #fff;
   }
-   a, a:hover, a:focus, a:active, a:visited {
+  a, a:hover, a:focus, a:active, a:visited {
     color: $secondaryColor;
     text-decoration: none;
   }
   a:hover, a:focus {
     text-decoration: underline;
+  }
+
+  ul li ul {
+    margin-bottom: 0;
+  }
+
+  a.btn {
+    font-size: 1em;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }

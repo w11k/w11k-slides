@@ -1,4 +1,8 @@
-$lineColor: #EAEAEA;
+@import "../slides/variables";
+
+li pre.prettyprint.linenums {
+  margin: 10px 0;
+}
 
 pre.prettyprint {
   .com { color: #93a1a1; }
@@ -20,6 +24,10 @@ pre.prettyprint {
     list-style: none; /* Remove default numbering */
     padding: 0;
     margin: 0 !important;
+
+    &:before {
+      margin: 0;
+    }
 
     & > li {
       padding: 0;
