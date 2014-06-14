@@ -23,6 +23,9 @@
     }
 
     .slide {
+      border: 1px solid red;
+      border-width: 0;
+
       a[href]:after {
         content:"";
       }
