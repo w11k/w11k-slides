@@ -1,5 +1,25 @@
 # w11k-slides Changelog
 
+<a name="0.5.0"></a>
+## 0.5.0 (2014-07-15)
+
+
+### Bug Fixes
+
+* **prettyprint:** fix margin of line numbers if prettyprint is used within a list element ([e3dc93fb](https://github.com/w11k/w11k-slides/commit/e3dc93fbaf9f2bee60e51b2333a5d8c9adc08e05))
+
+
+### Features
+
+* **prettyprint:** add support for title attribute ([e3dc93fb](https://github.com/w11k/w11k-slides/commit/e3dc93fbaf9f2bee60e51b2333a5d8c9adc08e05))
+
+
+### Breaking Changes
+
+* There is a new top-level-element: div.w11k-pretty-print. This element contains the pre element and, if present, the title. For better encapsulation all styling is now prefixed with .w11k-pretty-print.
+ ([e3dc93fb](https://github.com/w11k/w11k-slides/commit/e3dc93fbaf9f2bee60e51b2333a5d8c9adc08e05))
+
+
 <a name="0.4.2"></a>
 ## 0.4.2 (2014-06-15)
 
