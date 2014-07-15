@@ -1,71 +1,85 @@
 @import "../slides/variables";
 
-li pre.prettyprint.linenums {
-  margin: 10px 0;
-}
+.w11k-pretty-print {
 
-pre.prettyprint {
-  .com { color: #93a1a1; }
-  .lit { color: #195f91; }
-  .pun, .opn, .clo { color: #93a1a1; }
-  .fun { color: #dc322f; }
-  .str, .atv { color: #D14; }
-  .kwd, .linenums .tag { color: #1e347b; }
-  .typ, .atn, .dec, .var { color: teal; }
-  .pln { color: #48484c; }
+  $lineNumWidth: 2em;
+  $codePadding: 0.5em;
 
-  padding: 0;
-  background-color: #fff;
-  border: 0.1em solid darken($lineColor, 5%);
-  border-radius: 0.2em;
+  > .title {
+    margin-top: 0.3em;
+    margin-left: $lineNumWidth + $codePadding;
+    font-style: italic;
+  }
 
-  &.linenums ol.linenums {
-    counter-reset: li; /* Initiate a counter */
-    list-style: none; /* Remove default numbering */
+  li pre.prettyprint.linenums {
+    margin: 10px 0;
+  }
+
+  pre.prettyprint {
+    .com { color: #93a1a1; }
+    .lit { color: #195f91; }
+    .pun, .opn, .clo { color: #93a1a1; }
+    .fun { color: #dc322f; }
+    .str, .atv { color: #D14; }
+    .kwd, .linenums .tag { color: #1e347b; }
+    .typ, .atn, .dec, .var { color: teal; }
+    .pln { color: #48484c; }
+
     padding: 0;
-    margin: 0 !important;
+    background-color: #fff;
+    border: 0.1em solid darken($lineColor, 5%);
+    border-radius: 0.2em;
 
-    &:before {
-      margin: 0;
-    }
-
-    & > li {
+    &.linenums ol.linenums {
+      counter-reset: li; /* Initiate a counter */
+      list-style: none; /* Remove default numbering */
       padding: 0;
-      margin: 0;
-
-      & {
-        position: relative;
-        display: block;
-        padding: .2em .5em;
-        margin: 0 0 0 2em;
-        background-color: $lineColor;
-        border-radius: 0;
-        border-left: 0.1em solid darken($lineColor, 5%);
-        min-height: 1.4em;
-      }
+      margin: 0 !important;
 
       &:before {
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -2em;
-        width: 1.5em;
-        text-align: right;
-        color: darken($lineColor, 5%);
+        margin: 0;
       }
 
-      &:nth-child(even) {
-        background-color: darken($lineColor, 5%);
+      & > li {
+        padding: 0;
+        margin: 0;
+
+        & {
+          position: relative;
+          display: block;
+          padding: .2em $codePadding;
+          margin: 0;
+          margin-left: $lineNumWidth;
+          background-color: $lineColor;
+          border-radius: 0;
+          border-left: 0.1em solid darken($lineColor, 5%);
+          min-height: 1.4em;
+        }
+
+        &:before {
+          content: counter(li);
+          counter-increment: li;
+          position: absolute;
+          left: $lineNumWidth * -1;
+          width: 1.5em;
+          text-align: right;
+          color: darken($lineColor, 5%);
+          margin: 0;
+        }
+
+        &:nth-child(even) {
+          background-color: darken($lineColor, 5%);
+        }
+
+        &:hover, &:nth-child(even):hover  {
+          background-color: darken($lineColor, 20%);
+        }
+
+        &:hover:before, &:nth-child(even):hover:before  {
+          color: darken($lineColor, 30%);
+        }
       }
 
-      &:hover, &:nth-child(even):hover  {
-        background-color: darken($lineColor, 20%);
-      }
-
-      &:hover:before, &:nth-child(even):hover:before  {
-        color: darken($lineColor, 30%);
-      }
     }
-
   }
 }

@@ -10,6 +10,9 @@ angular.module('w11k.slides').directive('w11kPrettyPrint', ['$window', '$documen
     return html.replace(/>/g, '&gt;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   };
 
+  var containerTemplate = '<div class="w11k-pretty-print"><pre class="prettyprint linenums"></pre></div>';
+  var titleTemplate = '<div class="title"></div>';
+
   return {
     restrict: 'A',
     terminal: true,
@@ -19,14 +22,24 @@ angular.module('w11k.slides').directive('w11kPrettyPrint', ['$window', '$documen
         var escapedHtml = escapeHTML(html);
         var prettifiedHtml = $window.prettyPrintOne(escapedHtml, tAttrs.lang, true);
 
-        var preElement = $document[0].createElement('pre');
-        preElement.classList.add('prettyprint');
-        preElement.classList.add('linenums');
+        var container = angular.element(containerTemplate);
+        var preElement = container.find('pre');
 
-        preElement.innerHTML = prettifiedHtml;
+        preElement.html(prettifiedHtml);
 
-        tElement.replaceWith(preElement);
+        tElement.replaceWith(container);
+
+        return function (scope, element, attrs) {
+          attrs.$observe('title', function (titleText) {
+            if (titleText !== undefined && titleText !== '') {
+              var titleElement = angular.element(titleTemplate);
+              titleElement.html(titleText);
+              container.prepend(titleElement);
+            }
+          });
+        };
       }
+
     }
   };
 }]);
