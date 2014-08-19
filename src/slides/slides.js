@@ -104,8 +104,8 @@ angular.module('w11k.slides').controller('SlidesCtrl', ['$scope', 'SlidesService
 }]);
 
 angular.module('w11k.slides').directive('w11kSlides', [
-  '$location', '$document', 'SlidesService', '$rootScope', 'slidesConfig',
-  function ($location, $document, SlidesService, $rootScope, slidesConfig) {
+  '$location', '$window', '$document', 'SlidesService', '$rootScope', 'slidesConfig',
+  function ($location, $window, $document, SlidesService, $rootScope, slidesConfig) {
     return {
       restrict: 'EA',
       templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
@@ -125,6 +125,42 @@ angular.module('w11k.slides').directive('w11kSlides', [
             SlidesService.navigateTo(previous.name);
           }
         };
+
+        var localStorageModeKey = 'w11k-slides.mode';
+        var mode = 'export';
+
+        function toggleMode() {
+          if (mode === 'export') {
+            mode = 'screen';
+          }
+          else if (mode === 'screen') {
+            mode = 'export';
+          }
+
+          setMode(mode);
+
+          if (angular.isDefined($window.localStorage)) {
+            $window.localStorage[localStorageModeKey] = mode;
+          }
+        }
+
+        function setMode(mode) {
+          if (mode === 'export') {
+            element.removeClass('screen');
+            element.addClass('export');
+          }
+          else if (mode === 'screen') {
+            element.removeClass('export');
+            element.addClass('screen');
+          }
+        }
+
+        if (angular.isDefined($window.localStorage)) {
+          if (angular.isDefined($window.localStorage[localStorageModeKey])) {
+            mode = $window.localStorage[localStorageModeKey];
+            setMode(mode);
+          }
+        }
 
         $document.bind('keydown', function (event) {
           // right
@@ -160,8 +196,7 @@ angular.module('w11k.slides').directive('w11kSlides', [
           // e
           else if (event.keyCode === 69) {
             $rootScope.$apply(function () {
-              element.toggleClass('export');
-              element.toggleClass('screen');
+              toggleMode();
             });
           }
         });
