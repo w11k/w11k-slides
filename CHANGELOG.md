@@ -1,5 +1,15 @@
 # w11k-slides Changelog
 
+<a name="0.6.0"></a>
+## 0.6.0 (2014-08-19)
+
+
+### Features
+
+* **mode:** save mode (export or screen) in local storage ([6279f58d](https://github.com/w11k/w11k-slides/commit/6279f58d03e0570fedf9659f1b8dc9ed70005e82))
+* **styling:** add slide types styling for titled and centered ([f2a92dd9](https://github.com/w11k/w11k-slides/commit/f2a92dd9994e26f001ab6d2c0fd3ca52de65bab3))
+
+
 <a name="0.5.0"></a>
 ## 0.5.0 (2014-07-15)
 
