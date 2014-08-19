@@ -51,7 +51,8 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         options: {
-          style: 'expanded'
+          style: 'expanded',
+          compass: true
         },
         files: {
           'dist/w11k-slides.css': 'src/w11k-slides.scss'
