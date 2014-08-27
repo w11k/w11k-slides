@@ -1,20 +1,22 @@
 $w11k_red: #9a0510;
 
-$primaryColor: $w11k_red !default;
-$secondaryColor: #111 !default;
+$w11k-slides-color-1: $w11k_red !default;
+$w11k-slides-color-2: #111 !default;
 
-$titleTopTextColor: $primaryColor !default;
-$titleTopBackgroundColor: transparent !default;
-$titleSeparatorColor: transparent !default;
-$titleBottomTextColor: $secondaryColor !default;
-$titleBottomBackgroundColor: transparent !default;
+$w11k-slides-title-top-text-color: $w11k-slides-color-1 !default;
+$w11k-slides-title-top-background-color: transparent !default;
+$w11k-slides-title-separator-color: transparent !default;
+$w11k-slides-title-bottom-text-color: $w11k-slides-color-2 !default;
+$w11k-slides-title-bottom-background-color: transparent !default;
 
-$headerBackground: $primaryColor !default;
-$headerTextColor: white !default;
-$headerBorderColor: $secondaryColor !default;
-$headerLogo: none !default;
+$w11k-slides-slide-regular-header-background: $w11k-slides-color-1 !default;
+$w11k-slides-slide-regular-header-text-color: white !default;
+$w11k-slides-slide-regular-header-border-color: $w11k-slides-color-2 !default;
+$w11k-slides-slide-regular-header-logo: none !default;
 
-$blockquoteBorderColor: #999 !default;
-$blockquoteCizeTextColor: #999 !default;
+$w11k-slides-blockquote-border-color: #999 !default;
+$w11k-slides-blockquote-cize-text-color: #999 !default;
 
-$lineColor: #EAEAEA !default;
+$w11k-prettyprint-line-color: #EAEAEA !default;
+$w11k-prettyprint-line-color-alternate: darken($w11k-prettyprint-line-color, 5%) !default;
+$w11k-prettyprint-line-color-highlight: darken($w11k-prettyprint-line-color, 20%) !default;

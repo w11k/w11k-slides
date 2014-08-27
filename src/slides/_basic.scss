@@ -11,8 +11,8 @@ html, body {
 
   .header {
     position: relative;
-    background: $headerBackground;
-    border-bottom: 0.2em solid $headerBorderColor;
+    background: $w11k-slides-slide-regular-header-background;
+    border-bottom: 0.2em solid $w11k-slides-slide-regular-header-border-color;
     padding: 0.25em 0;
     margin-bottom: 1em;
     margin-left: -1.5em;
@@ -26,7 +26,7 @@ html, body {
   }
 
   h1 {
-    color: $titleTopTextColor;
+    color: $w11k-slides-title-top-text-color;
     font-size: 2.5em;
     position: relative;
     top: auto;
@@ -39,7 +39,7 @@ html, body {
   }
 
   h2 {
-    color: $headerTextColor;
+    color: $w11k-slides-slide-regular-header-text-color;
     font-size: 2em;
     padding: 0;
     margin: 0;
@@ -59,7 +59,7 @@ html, body {
     width: 1.5em;
     height: 1.2em;
     content: " ";
-    background-image: $headerLogo;
+    background-image: $w11k-slides-slide-regular-header-logo;
     background-repeat: no-repeat;
     background-position: 100% 50%;
     background-size: 1.1em;
@@ -71,7 +71,7 @@ html, body {
   }
 
   h3 {
-    color: $primaryColor;
+    color: $w11k-slides-color-1;
     font-size: 1.3em;
   }
 
@@ -88,7 +88,7 @@ html, body {
 
   code {
     color: #888;
-    background-color: $lineColor;
+    background-color: $w11k-prettyprint-line-color;
   }
 
   blockquote {
@@ -97,7 +97,7 @@ html, body {
     padding: 0.5em;
     padding-left: 1em;
     color: #000;
-    border-left: 5px solid $blockquoteBorderColor;
+    border-left: 5px solid $w11k-slides-blockquote-border-color;
 
     p {
       font-size: inherit;
@@ -112,7 +112,7 @@ html, body {
     font-size: .5em;
     font-style: normal;
     font-weight: bold;
-    color: $blockquoteCizeTextColor;
+    color: $w11k-slides-blockquote-cize-text-color;
   }
 
   ::-moz-selection {
@@ -124,7 +124,7 @@ html, body {
     color: #fff;
   }
   a, a:hover, a:focus, a:active, a:visited {
-    color: $secondaryColor;
+    color: $w11k-slides-color-2;
     text-decoration: none;
   }
   a:hover, a:focus {

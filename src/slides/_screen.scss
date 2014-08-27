@@ -37,7 +37,7 @@
 
         li:before {
           content: "▸";
-          color: $primaryColor;
+          color: $w11k-slides-color-1;
           margin-right: 0.5em;
           margin-left: -1em;
         }
@@ -45,14 +45,14 @@
 
       ul, ol {
         li {
-          color: $secondaryColor;
+          color: $w11k-slides-color-2;
           margin-bottom: 0.3em;
         }
       }
 
       li ul li:before {
         content: "▪";
-        color: $secondaryColor;
+        color: $w11k-slides-color-2;
       }
     }
   }

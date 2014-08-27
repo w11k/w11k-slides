@@ -6,8 +6,8 @@
     position: relative;
     height: 38.2%;
     text-align: center;
-    color: $titleTopTextColor;
-    background-color: $titleTopBackgroundColor;
+    color: $w11k-slides-title-top-text-color;
+    background-color: $w11k-slides-title-top-background-color;
     padding: 0 2em;
 
     .content {
@@ -21,8 +21,8 @@
   .bottom {
     position: relative;
     height: 61.8%;
-    border-top: 0.3em solid $titleSeparatorColor;
-    background-color: $titleBottomBackgroundColor;
+    border-top: 0.3em solid $w11k-slides-title-separator-color;
+    background-color: $w11k-slides-title-bottom-background-color;
     padding: 0 2em;
 
     .content {
@@ -53,7 +53,7 @@
 
       h2 {
         text-align: center;
-        color: $primaryColor;
+        color: $w11k-slides-color-1;
         text-transform: uppercase;
       }
 
