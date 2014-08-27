@@ -133,6 +133,9 @@ html, body {
       color: $w11k-slides-color-2;
       text-decoration: none;
     }
+    a[href^="http"] {
+      text-decoration: underline;
+    }
     a:hover, a:focus {
       text-decoration: underline;
     }
