@@ -1,6 +1,4 @@
-$exampleShownTextColor: #ccc !default;
-
 a.example-shown {
   text-decoration: line-through !important;
-  color: $exampleShownTextColor !important;
+  color: $w11k-openOnce-example-shown-text-color !important;
 }
