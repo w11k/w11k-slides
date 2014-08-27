@@ -1,9 +1,12 @@
 @import "compass";
 
+$theCodeCampus_orange: #ed5502;
+@import "variables";
+
+@import "corner-ribbon/corner-ribbon";
 @import "open-once/open-once";
 @import "prettyprint/prettyprint";
 
-@import "slides/variables";
 @import "slides/mixins";
 @import "slides/basic";
 @import "slides/screen";

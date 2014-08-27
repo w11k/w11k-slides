@@ -26,16 +26,6 @@
       border: 1px solid red;
       border-width: 0;
 
-      a[href]:after {
-        content:"";
-      }
-
-      a[href^="http"]:after {
-        content:" (" attr(href) ")";
-        font-size: 0.7em;
-        font-weight: normal;
-      }
-
       ul {
         list-style: square;
 

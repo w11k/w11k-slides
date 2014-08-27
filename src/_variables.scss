@@ -1,0 +1,43 @@
+$w11k-slides-color-1: $theCodeCampus_orange !default;
+$w11k-slides-color-2: #111 !default;
+
+/* * * * * * * * * * * * * * * * * * * *
+ * Slides
+ * * * * * * * * * * * * * * * * * * * */
+
+$w11k-slides-title-top-text-color: $w11k-slides-color-1 !default;
+$w11k-slides-title-top-background-color: transparent !default;
+$w11k-slides-title-separator-color: darken($w11k-slides-color-1, 8%) !default;
+$w11k-slides-title-bottom-text-color: $w11k-slides-color-2 !default;
+$w11k-slides-title-bottom-background-color: transparent !default;
+
+$w11k-slides-slide-regular-header-background: $w11k-slides-color-1 !default;
+$w11k-slides-slide-regular-header-text-color: white !default;
+$w11k-slides-slide-regular-header-border-color: darken($w11k-slides-color-1, 8%) !default;
+$w11k-slides-slide-regular-header-logo: none !default;
+
+$w11k-slides-blockquote-border-color: #999 !default;
+$w11k-slides-blockquote-cize-text-color: #999 !default;
+
+/* * * * * * * * * * * * * * * * * * * *
+ * Open Once
+ * * * * * * * * * * * * * * * * * * * */
+
+$w11k-openOnce-example-shown-text-color: #ccc !default;
+
+/* * * * * * * * * * * * * * * * * * * *
+ * Pretty Print
+ * * * * * * * * * * * * * * * * * * * */
+
+$w11k-prettyPrint-line-color: #EAEAEA !default;
+$w11k-prettyPrint-line-color-alternate: darken($w11k-prettyPrint-line-color, 5%) !default;
+$w11k-prettyPrint-line-color-highlight: darken($w11k-prettyPrint-line-color, 20%) !default;
+
+/* * * * * * * * * * * * * * * * * * * *
+ * Corner Ribbon
+ * * * * * * * * * * * * * * * * * * * */
+
+$w11k-cornerRibbon-background-color: $w11k-slides-color-1 !default;
+$w11k-cornerRibbon-border-color: darken($w11k-slides-color-1, 8%) !default;
+$w11k-cornerRibbon-text-color: white !default;
+$w11k-cornerRibbon-distance: 6em !default;

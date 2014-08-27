@@ -6,7 +6,8 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-html2js');
@@ -48,14 +49,13 @@ module.exports = function (grunt) {
         }]
       }
     },
-    sass: {
+    compass: {
       dist: {
         options: {
-          style: 'expanded',
-          compass: true
-        },
-        files: {
-          'dist/w11k-slides.css': 'src/w11k-slides.scss'
+          outputStyle: 'expanded',
+          sassDir: 'src',
+          specify: 'src/w11k-slides.scss',
+          cssDir: 'dist'
         }
       }
     },
@@ -114,12 +114,18 @@ module.exports = function (grunt) {
         }]
       }
     },
+    cssmin: {
+      main: {
+        files: {
+          'dist/w11k-slides.min.css': ['dist/w11k-slides.css']
+        }
+      }
+    },
     connect: {
-      demo: {
+      test: {
         options: {
           port: 9000,
           base: '.',
-          directory: 'demo',
           keepalive: true
         }
       }
@@ -138,7 +144,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', ['build']);
 
-  grunt.registerTask('build', ['clean', 'jshint:src', 'sass', 'copy:template', 'copy:sass', 'html2js', 'uglify']);
-  grunt.registerTask('demo', ['build', 'connect:demo']);
+  grunt.registerTask('test', ['build', 'connect:test']);
+  grunt.registerTask('build', ['clean', 'jshint:src', 'compass', 'copy:template', 'copy:sass', 'html2js', 'uglify', 'cssmin']);
 
 };

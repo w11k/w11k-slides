@@ -1,4 +1,4 @@
-@import "../slides/variables";
+@import "../variables";
 
 .w11k-pretty-print {
 
@@ -27,7 +27,7 @@
 
     padding: 0;
     background-color: #fff;
-    border: 0.1em solid darken($lineColor, 5%);
+    border: 0.1em solid darken($w11k-prettyPrint-line-color, 5%);
     border-radius: 0.2em;
 
     &.linenums ol.linenums {
@@ -50,9 +50,9 @@
           padding: .2em $codePadding;
           margin: 0;
           margin-left: $lineNumWidth;
-          background-color: $lineColor;
+          background-color: $w11k-prettyPrint-line-color;
           border-radius: 0;
-          border-left: 0.1em solid darken($lineColor, 5%);
+          border-left: 0.1em solid darken($w11k-prettyPrint-line-color, 5%);
           min-height: 1.4em;
         }
 
@@ -63,20 +63,20 @@
           left: $lineNumWidth * -1;
           width: 1.5em;
           text-align: right;
-          color: darken($lineColor, 5%);
+          color: darken($w11k-prettyPrint-line-color, 5%);
           margin: 0;
         }
 
         &:nth-child(even) {
-          background-color: darken($lineColor, 5%);
+          background-color: $w11k-prettyPrint-line-color-alternate;
         }
 
         &:hover, &:nth-child(even):hover  {
-          background-color: darken($lineColor, 20%);
+          background-color: $w11k-prettyPrint-line-color-highlight;
         }
 
         &:hover:before, &:nth-child(even):hover:before  {
-          color: darken($lineColor, 30%);
+          color: $w11k-prettyPrint-line-color-highlight;
         }
       }
 
