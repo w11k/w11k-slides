@@ -1,5 +1,25 @@
 # w11k-slides Changelog
 
+<a name="0.7.0"></a>
+## 0.7.0 (2014-08-27)
+
+
+#### Bug Fixes
+
+* **export:** remove adding url to external links to avoid layout problems ([f71cdb0f](https://github.com/w11k/w11k-slides/commit/f71cdb0f48abfcb725d6c8fa649e2a1111622940))
+
+
+#### Features
+
+* **corner-ribbon:** add basic implementation of corner ribbon (top-right only) ([0b9c13ea](https://github.com/w11k/w11k-slides/commit/0b9c13ea79f708eed5b9614c0c6ed5995718db4c))
+
+
+#### Breaking Changes
+
+* All sass variable names has changed. See variables.scss for new names.
+ ([45c64443](https://github.com/w11k/w11k-slides/commit/45c6444349959dc751ed30b19cec6842e69a844a))
+
+
 <a name="0.6.0"></a>
 ## 0.6.0 (2014-08-19)
 
