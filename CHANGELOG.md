@@ -1,5 +1,15 @@
 # w11k-slides Changelog
 
+<a name="0.7.1"></a>
+### 0.7.1 (2014-09-01)
+
+
+#### Bug Fixes
+
+* **corner-ribbon:** do not overlay hole slide ([c79a46dd](https://github.com/w11k/w11k-slides/commit/c79a46dd59bb921258cfbc3a14bf52da9c62feb8))
+* **title slide:** avoid white margins and improve styling ([e386609](https://github.com/w11k/w11k-slides/commit/e3866099e32ec22180dcbcfc5874fbe7d648e2e5))
+
+
 <a name="0.7.0"></a>
 ## 0.7.0 (2014-08-27)
 
