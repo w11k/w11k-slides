@@ -6,6 +6,7 @@ html, body {
 .slides {
   > div {
     position: relative;
+    overflow: hidden;
   }
 
   .slide {
