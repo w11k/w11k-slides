@@ -1,0 +1,38 @@
+@media screen {
+  .slides.export {
+
+    -webkit-print-color-adjust:exact;
+
+    > div {
+      page-break-before: always;
+      display: table !important;
+      width: 298mm;
+      height: 210mm;
+
+      > div {
+        display: table-row;
+        height: 100%;
+        width: 100%;
+
+        > * {
+          display: table-cell;
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+
+    .slide {
+      border: 1px solid red;
+      border-width: 0;
+
+      ul {
+        list-style: square;
+
+        ul {
+          list-style: disc;
+        }
+      }
+    }
+  }
+}

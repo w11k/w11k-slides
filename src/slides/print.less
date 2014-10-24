@@ -1,0 +1,72 @@
+@media print {
+
+  @page {
+    margin: 1.5cm;
+  }
+
+  html, body {
+    font-size: 12px;
+  }
+
+  * {
+    color: black;
+  }
+
+  .slides {
+
+    > div {
+      display: block !important;
+      page-break-before: always;
+
+      > div {
+        display: block;
+
+        > .slide {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .slide {
+
+    padding: 0 0.5em;
+
+    h3 {
+      margin: 1em 0;
+    }
+
+    a {
+      text-decoration: underline !important;
+    }
+
+    a[href]:after {
+      content:"";
+    }
+
+    a[href^="http"]:after {
+      content:" (" attr(href) ")";
+      font-size: 0.7em;
+      font-weight: normal;
+    }
+
+    ul {
+      list-style: square;
+
+      ul {
+        list-style: disc;
+      }
+    }
+
+    blockquote {
+      border-top: 0;
+      border-right: 0;
+      border-bottom: 0;
+    }
+
+    pre {
+      border-color: #fff;
+      font-size: 0.6em;
+    }
+  }
+}

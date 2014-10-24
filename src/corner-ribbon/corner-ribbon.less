@@ -1,0 +1,36 @@
+.w11k-corner-ribbon, .slides .slide .corner-ribbon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  height: 2.3em;
+
+  & > .content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    text-align: center;
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.2em 0;
+    border: 0.1em solid @w11k-cornerRibbon-border-color;
+
+    min-width: @w11k-cornerRibbon-distance * 2.5;
+    transform: translate(50%, -50%) rotate(45deg) translateY(@w11k-cornerRibbon-distance);
+
+    background: @w11k-cornerRibbon-background-color;
+    color: @w11k-cornerRibbon-text-color;
+
+    a, a[href^="http"] {
+      text-decoration: none;
+      color: @w11k-cornerRibbon-text-color;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
