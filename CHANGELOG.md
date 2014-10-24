@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.8.1"></a>
+## 0.8.1 (2014-10-24)
+
+
+### Bug Fixes
+
+* **styling:** remove less output from dist ([b0be0e0b](https://github.com/w11k/w11k-slides/commit/b0be0e0b09c41d4fa6d589bcb343b985b2eabe5f))
+
+
 <a name="0.8.0"></a>
 ## 0.8.0 (2014-10-24)
 
