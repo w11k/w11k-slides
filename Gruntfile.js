@@ -36,7 +36,8 @@ module.exports = function (grunt) {
     },
 
     clean: {
-      dist: 'dist/*'
+      dist: 'dist/*',
+      temp: 'temp/*'
     },
     jshint: {
       src: {
@@ -67,7 +68,7 @@ module.exports = function (grunt) {
           paths: ['src']
         },
         files: {
-          'dist/w11k-slides.less.css': 'src/w11k-slides.less'
+          'temp/w11k-slides.less.css': 'src/w11k-slides.less'
         }
       }
     },
