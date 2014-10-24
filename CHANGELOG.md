@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.8.0"></a>
+## 0.8.0 (2014-10-24)
+
+
+#### Features
+
+* **styling:** add less support ([d442e619](https://github.com/w11k/w11k-slides/commit/d442e619d317b2828b7f1102b3836b87ae2d7f2d))
+
+
 <a name="0.7.1"></a>
 ### 0.7.1 (2014-09-01)
 
