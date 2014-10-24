@@ -3,6 +3,7 @@
 
 dist
 node_modules
+temp
 
 .DS_Store
 .sass-cache
