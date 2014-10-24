@@ -7,6 +7,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -53,9 +54,20 @@ module.exports = function (grunt) {
       dist: {
         options: {
           outputStyle: 'expanded',
+          noLineComments: true,
           sassDir: 'src',
           specify: 'src/w11k-slides.scss',
           cssDir: 'dist'
+        }
+      }
+    },
+    less: {
+      dist: {
+        options: {
+          paths: ['src']
+        },
+        files: {
+          'dist/w11k-slides.less.css': 'src/w11k-slides.less'
         }
       }
     },
@@ -69,6 +81,14 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'src',
           src: '**/*.scss',
+          dest: 'dist'
+        }]
+      },
+      less: {
+        files: [{
+          expand: true,
+          cwd: 'src',
+          src: '**/*.less',
           dest: 'dist'
         }]
       }
@@ -145,6 +165,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['build']);
 
   grunt.registerTask('test', ['build', 'connect:test']);
-  grunt.registerTask('build', ['clean', 'jshint:src', 'compass', 'copy:template', 'copy:sass', 'html2js', 'uglify', 'cssmin']);
+  grunt.registerTask('build', ['clean', 'jshint:src', 'compass', 'less', 'copy', 'html2js', 'uglify', 'cssmin']);
 
 };
