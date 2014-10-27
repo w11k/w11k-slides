@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.8.2"></a>
+## 0.8.2 (2014-10-27)
+
+
+### Bug Fixes
+
+* **styling:** use 'background' instead of 'background-color' on title slide ([3871984c](https://github.com/w11k/w11k-slides/commit/3871984cbd0e33ec4c96f5e307a4a04ba1a0ce64))
+
+
 <a name="0.8.1"></a>
 ## 0.8.1 (2014-10-24)
 
