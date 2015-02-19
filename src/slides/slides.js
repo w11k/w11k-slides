@@ -163,40 +163,36 @@ angular.module('w11k.slides').directive('w11kSlides', [
         }
 
         $document.bind('keydown', function (event) {
-          // right
-          if (event.keyCode === 39) {
-            $rootScope.$apply(function () {
-              goToNext();
-            });
+          var action;
+
+          // right or page down
+          if (event.keyCode === 39 || event.keyCode === 34) {
+            action = goToNext;
           }
-          // left
-          else if (event.keyCode === 37) {
-            $rootScope.$apply(function () {
-              goToPrevious();
-            });
+          // left or page up
+          else if (event.keyCode === 37 || event.keyCode === 33) {
+            action = goToPrevious;
           }
           // pos 1
           else if (event.keyCode === 36) {
-            $rootScope.$apply(function () {
-              SlidesService.navigateToFirst();
-            });
+            action = SlidesService.navigateToFirst;
           }
           // end
           else if (event.keyCode === 35) {
-            $rootScope.$apply(function () {
-              SlidesService.navigateToLast();
-            });
+            action = SlidesService.navigateToLast;
           }
           // o
           else if (event.keyCode === 79) {
-            $rootScope.$apply(function () {
-              SlidesService.navigateToOverview();
-            });
+            action = SlidesService.navigateToOverview;
           }
           // e
           else if (event.keyCode === 69) {
+            action = toggleMode;
+          }
+
+          if (action) {
             $rootScope.$apply(function () {
-              toggleMode();
+              action();
             });
           }
         });
