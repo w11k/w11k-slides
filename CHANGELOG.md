@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.9.1"></a>
+## 0.9.1 (2015-02-19)
+
+
+### Bug Fixes
+
+* **overlay:** hide overlay completely if inactive ([c628cc99](https://github.com/w11k/w11k-slides/commit/c628cc990318a5282c2ff3085d32dd70e606f269))
+
+
 <a name="0.9.0"></a>
 ## 0.9.0 (2015-02-19)
 
