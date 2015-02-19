@@ -155,6 +155,10 @@ angular.module('w11k.slides').directive('w11kSlides', [
           }
         }
 
+        function toggleOverlay() {
+          element[0].querySelector('div.overlay').classList.toggle('active');
+        }
+
         if (angular.isDefined($window.localStorage)) {
           if (angular.isDefined($window.localStorage[localStorageModeKey])) {
             mode = $window.localStorage[localStorageModeKey];
@@ -188,6 +192,10 @@ angular.module('w11k.slides').directive('w11kSlides', [
           // e
           else if (event.keyCode === 69) {
             action = toggleMode;
+          }
+          // p or period
+          else if (event.keyCode === 80 || event.keyCode === 190) {
+            action = toggleOverlay;
           }
 
           if (action) {
