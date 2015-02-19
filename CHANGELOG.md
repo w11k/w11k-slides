@@ -1,5 +1,15 @@
 # w11k-slides Changelog
 
+<a name="0.9.0"></a>
+## 0.9.0 (2015-02-19)
+
+
+### Features
+
+* **navigation:** add support for page-up and page-down to navigate forward and backward ([97320ac4](https://github.com/w11k/w11k-slides/commit/97320ac4ec576ec3c9658befaa8bab7188cc51d7))
+* **overlay:** add blank-out-overlay (toggle with p or period) ([5a187412](https://github.com/w11k/w11k-slides/commit/5a1874129a8767c9464ba9ab4bef0b963fb5a630))
+
+
 <a name="0.8.2"></a>
 ## 0.8.2 (2014-10-27)
 
