@@ -5,6 +5,29 @@
     // avoid horizontal scroll bar
     max-width: 99.9999999%;
 
+    > div.overlay {
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      z-index: 20;
+      -webkit-opacity: 0;
+      -moz-opacity: 0;
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease;
+      -moz-transition: opacity 0.5s ease;
+      transition: opacity 0.5s ease;
+    }
+
+    > div.overlay.active {
+      -webkit-opacity: 1;
+      -moz-opacity: 1;
+      opacity: 1;
+    }
+
     > div {
       display: table;
       height: 100%;
