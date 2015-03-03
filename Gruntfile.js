@@ -140,6 +140,12 @@ module.exports = function (grunt) {
           src: 'src/**/*.js',
           dest: 'dist/w11k-slides.min.js'
         }]
+      },
+      templates: {
+        files: [{
+          src: 'dist/w11k-slides.tpl.js',
+          dest: 'dist/w11k-slides.tpl.min.js'
+        }]
       }
     },
     cssmin: {
