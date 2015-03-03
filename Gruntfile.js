@@ -74,8 +74,12 @@ module.exports = function (grunt) {
     },
     copy: {
       template: {
-        src: 'src/w11k-slides.tpl.html',
-        dest: 'dist/w11k-slides.tpl.html'
+        src: 'src/slides/slides.tpl.html',
+        dest: 'dist/slides/slides.tpl.html'
+      },
+      footer: {
+        src: 'src/footer/footer.tpl.html',
+        dest: 'dist/footer/footer.tpl.html'
       },
       sass: {
         files: [{
@@ -105,7 +109,10 @@ module.exports = function (grunt) {
           }
         },
         files: {
-          'dist/w11k-slides.tpl.js': 'src/slides/slides.tpl.html'
+          'dist/w11k-slides.tpl.js': [
+            'src/slides/slides.tpl.html',
+            'src/footer/footer.tpl.html'
+          ]
         }
       }
     },
