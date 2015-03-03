@@ -1,5 +1,15 @@
 # w11k-slides Changelog
 
+<a name="0.10.1"></a>
+## 0.10.1 (2015-03-03)
+
+
+### Bug Fixes
+
+* **config:** fix footer template ([5ae1eef6](https://github.com/w11k/w11k-slides/commit/5ae1eef6d888e217c3160b485376631a0b4714ff))
+* **keyboard:** do not apply event if modifier was pressed ([8e2cdea6](https://github.com/w11k/w11k-slides/commit/8e2cdea6539fe85ced8b4c4e9dc4466c1f250c93))
+
+
 <a name="0.10.0"></a>
 ## 0.10.0 (2015-03-03)
 
