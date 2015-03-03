@@ -1,7 +1,16 @@
 'use strict';
 
 angular.module('w11k.slides').constant('slidesConfig', {
-  slides: []
+  slides: [],
+  slideTemplatePrefix: 'slides/content/',
+  slideTemplateSuffix: '.tpl.html',
+  masters: {},
+  footer: {
+    templateUrl: 'slides/footer.tpl.html',
+    left: '',
+    middle: '',
+    right: '$index + 1'
+  }
 });
 
 angular.module('w11k.slides').factory('SlidesService', ['slidesConfig', '$location', '$rootScope', function (slidesConfig, $location, $rootScope) {
@@ -101,6 +110,66 @@ angular.module('w11k.slides').factory('SlidesService', ['slidesConfig', '$locati
 
 angular.module('w11k.slides').controller('SlidesCtrl', ['$scope', 'SlidesService', function ($scope, SlidesService) {
   $scope.slides = SlidesService.getSlides();
+}]);
+
+
+
+angular.module('w11k.slides').directive('w11kSlideMaster', ['slidesConfig', function (slidesConfig) {
+  var removeChildren = function (node) {
+    var last = node.lastChild;
+    if (last) {
+      do {
+        node.removeChild(last);
+        last = node.lastChild;
+      } while (last);
+    }
+  };
+
+  return {
+    templateUrl: function (element, attrs) {
+      var key = attrs.w11kSlideMaster || attrs.master;
+      var templateUrl = slidesConfig.masters[key];
+
+      if (angular.isUndefined(templateUrl)) {
+        throw new Error('No Mater-Slide found for "' + key + '". Please configure "slidesConfig" properly.');
+      }
+
+      return templateUrl;
+    },
+    restrict: 'EA',
+    replace: true,
+    transclude: true,
+    link: function (scope, iElement, iAttrs, ctrl, transclude) {
+      var transclusionScope;
+
+      transclude(function(clone, scope) {
+
+        for (var i = 0; i < clone.length; i++) {
+          var part = clone[i];
+
+          if (part !== undefined && angular.isFunction(part.getAttribute)) {
+            var partName = part.getAttribute('w11k-slide-part-source');
+
+            if (partName !== undefined && partName !== null) {
+              var selector = '[w11k-slide-part-target="' + partName + '"]';
+              var container = iElement[0].querySelector(selector);
+              if (container !== null) {
+                removeChildren(container);
+                container.appendChild(part, container);
+                container.removeAttribute('w11k-slide-part-target');
+              }
+            }
+          }
+        }
+
+        transclusionScope = scope;
+      });
+
+      scope.$on('$destroy', function () {
+        transclusionScope.$destroy();
+      });
+    }
+  };
 }]);
 
 angular.module('w11k.slides').directive('w11kSlides', [
