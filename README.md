@@ -16,6 +16,10 @@ Features:
 * configurable service to define slides and their templates via slidesConfig constant
 * stylesheets for screen, print export and screen export
 
+## Attention
+
+w11k-slides basically works with AngularJS 1.3. But it has a known bug: Exporting a PDF with pdfcrowd.com does not work at the moment (see [#1](https://github.com/w11k/w11k-slides/issues/1)).
+
 
 ## Getting Started
 
