@@ -4,7 +4,7 @@ html, body {
 }
 
 .slides {
-  > div {
+  div.slide-container {
     position: relative;
     overflow: hidden;
   }

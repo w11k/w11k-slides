@@ -3,7 +3,7 @@
 
     -webkit-print-color-adjust:exact;
 
-    > div {
+    div.slide-container {
       page-break-before: always;
       display: table !important;
       width: 298mm;
