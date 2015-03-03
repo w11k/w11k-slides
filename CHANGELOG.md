@@ -1,5 +1,22 @@
 # w11k-slides Changelog
 
+<a name="0.10.0"></a>
+## 0.10.0 (2015-03-03)
+
+
+### Bug Fixes
+
+* **overlay:** do not apply slide styling to overlay ([d353f1a9](https://github.com/w11k/w11k-slides/commit/d353f1a9c4b4084e134dd9db438d20cd858f19de))
+
+
+### Features
+
+* **build:** add compressed templates.js to dist ([48487568](https://github.com/w11k/w11k-slides/commit/484875689b5a066e91eaf4df037e00ef7333841c))
+* **footer:** add w11k-footer directive ([d16095f7](https://github.com/w11k/w11k-slides/commit/d16095f7f6d6b6cb7a76ce25acd6951115bed530))
+* **master-slides:** add multi-transclude-directive w11k-slide-master ([00edece1](https://github.com/w11k/w11k-slides/commit/00edece103b865f76dfad8dc25f3f682c099f914))
+* **styling:** update bootstrap to 3.3.x ([c34da3d3](https://github.com/w11k/w11k-slides/commit/c34da3d3b36fc43b24b105d708fdf742b910f54d))
+
+
 <a name="0.9.1"></a>
 ## 0.9.1 (2015-02-19)
 
