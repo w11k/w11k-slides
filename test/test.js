@@ -1,13 +1,16 @@
 'use strict';
 
-angular.module("demo", ["w11k.slides", "w11k.slides.template"]);
+angular.module('demo', ['w11k.slides', 'w11k.slides.template']);
 
-angular.module("demo").constant('slidesConfig', {
-  slides: [
+angular.module('demo').config(function (slidesConfig) {
+  slidesConfig.slides = [
     'title',
     'about',
     'usage',
     'end'
-  ],
-  slideTemplatePrefix: 'slides/'
+  ];
+  slidesConfig.masters = {
+    'regular': 'master/regular.html'
+  };
+  slidesConfig.slideTemplatePrefix = 'slides/';
 });
