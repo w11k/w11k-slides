@@ -225,6 +225,10 @@ angular.module('w11k.slides').directive('w11kSlides', [
         $document.bind('keydown', function (event) {
           var action;
 
+          if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
+            return;
+          }
+
           // right or page down
           if (event.keyCode === 39 || event.keyCode === 34) {
             action = goToNext;
