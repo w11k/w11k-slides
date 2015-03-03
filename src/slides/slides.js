@@ -1,18 +1,5 @@
 'use strict';
 
-angular.module('w11k.slides').constant('slidesConfig', {
-  slides: [],
-  slideTemplatePrefix: 'slides/content/',
-  slideTemplateSuffix: '.tpl.html',
-  masters: {},
-  footer: {
-    templateUrl: 'slides/footer.tpl.html',
-    left: '',
-    middle: '',
-    right: '$index + 1'
-  }
-});
-
 angular.module('w11k.slides').factory('SlidesService', ['slidesConfig', '$location', '$rootScope', function (slidesConfig, $location, $rootScope) {
   var activeSlide;
 
