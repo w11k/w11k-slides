@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.10.2"></a>
+### 0.10.2 (2015-05-08)
+
+
+#### Bug Fixes
+
+* **pretty-print:** add title to element used in the dom ([906b425e](https://github.com/w11k/w11k-slides/commit/906b425eb2478a91a3959f34d6594d058cecfb51))
+
+
 <a name="0.10.1"></a>
 ## 0.10.1 (2015-03-03)
 
