@@ -34,7 +34,7 @@ angular.module('w11k.slides').directive('w11kPrettyPrint', ['$window', '$documen
             if (titleText !== undefined && titleText !== '') {
               var titleElement = angular.element(titleTemplate);
               titleElement.html(titleText);
-              container.prepend(titleElement);
+              element.prepend(titleElement);
             }
           });
         };
