@@ -224,6 +224,7 @@ angular.module('w11k.slides').directive('w11kSlides', [
 
         $document.bind('keydown', function (event) {
           var action;
+          var actionType;
 
           if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
             return;
@@ -232,22 +233,27 @@ angular.module('w11k.slides').directive('w11kSlides', [
           // right or page down
           if (event.keyCode === 39 || event.keyCode === 34) {
             action = goToNext;
+            actionType = 'navigate';
           }
           // left or page up
           else if (event.keyCode === 37 || event.keyCode === 33) {
             action = goToPrevious;
+            actionType = 'navigate';
           }
           // pos 1
           else if (event.keyCode === 36) {
             action = SlidesService.navigateToFirst;
+            actionType = 'navigate';
           }
           // end
           else if (event.keyCode === 35) {
             action = SlidesService.navigateToLast;
+            actionType = 'navigate';
           }
           // o
           else if (event.keyCode === 79) {
             action = SlidesService.navigateToOverview;
+            actionType = 'navigate';
           }
           // e
           else if (event.keyCode === 69) {
@@ -261,6 +267,9 @@ angular.module('w11k.slides').directive('w11kSlides', [
           if (action) {
             $rootScope.$apply(function () {
               action();
+              if (actionType === 'navigate') {
+                $window.scrollTo(0, 0);
+              }
             });
           }
         });
