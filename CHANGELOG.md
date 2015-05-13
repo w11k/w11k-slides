@@ -1,10 +1,19 @@
 # w11k-slides Changelog
 
+<a name="0.10.3"></a>
+## 0.10.3 (2015-05-13)
+
+
+### Bug Fixes
+
+* **slides:** scroll to top on navigating to other slide ([d61dea94](https://github.com/w11k/w11k-slides/commit/d61dea94363ecebc4016461cbc09d19a4280b402))
+
+
 <a name="0.10.2"></a>
-### 0.10.2 (2015-05-08)
+## 0.10.2 (2015-05-08)
 
 
-#### Bug Fixes
+### Bug Fixes
 
 * **pretty-print:** add title to element used in the dom ([906b425e](https://github.com/w11k/w11k-slides/commit/906b425eb2478a91a3959f34d6594d058cecfb51))
 
