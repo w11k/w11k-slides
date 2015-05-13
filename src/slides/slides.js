@@ -166,21 +166,22 @@ angular.module('w11k.slides').directive('w11kSlides', [
       restrict: 'EA',
       templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
       replace: true,
-      link: function (scope, element) {
+      link: function (scope, jqElement) {
+        var element = jqElement[0];
 
-        var goToNext = function () {
+        function goToNext() {
           var next = SlidesService.getActiveSlide().next;
           if (angular.isDefined(next)) {
             SlidesService.navigateTo(next.name);
           }
-        };
+        }
 
-        var goToPrevious = function () {
+        function goToPrevious() {
           var previous = SlidesService.getActiveSlide().previous;
           if (angular.isDefined(previous)) {
             SlidesService.navigateTo(previous.name);
           }
-        };
+        }
 
         var localStorageModeKey = 'w11k-slides.mode';
         var mode = 'export';
@@ -202,17 +203,16 @@ angular.module('w11k.slides').directive('w11kSlides', [
 
         function setMode(mode) {
           if (mode === 'export') {
-            element.removeClass('screen');
-            element.addClass('export');
+            element.classList.remove('screen');
+            element.classList.add('export');
           }
           else if (mode === 'screen') {
-            element.removeClass('export');
-            element.addClass('screen');
+            element.classList.remove('export');
+            element.classList.add('screen');
           }
         }
-
         function toggleOverlay() {
-          element[0].querySelector('div.overlay').classList.toggle('active');
+          element.querySelector('div.overlay').classList.toggle('active');
         }
 
         if (angular.isDefined($window.localStorage)) {
