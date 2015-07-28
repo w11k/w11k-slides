@@ -160,8 +160,8 @@ angular.module('w11k.slides').directive('w11kSlideMaster', ['slidesConfig', func
 }]);
 
 angular.module('w11k.slides').directive('w11kSlides', [
-  '$location', '$window', '$document', 'SlidesService', '$rootScope', 'slidesConfig',
-  function ($location, $window, $document, SlidesService, $rootScope, slidesConfig) {
+  '$location', '$window', '$document', 'SlidesService', '$rootScope', 'slidesConfig', '$injector',
+  function ($location, $window, $document, SlidesService, $rootScope, slidesConfig, $injector) {
     return {
       restrict: 'EA',
       templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
@@ -271,6 +271,11 @@ angular.module('w11k.slides').directive('w11kSlides', [
                 $window.scrollTo(0, 0);
               }
             });
+          }
+
+          var customShortcut = slidesConfig.shortcuts[event.keyCode];
+          if (angular.isFunction(customShortcut) || angular.isArray(customShortcut)) {
+            $injector.invoke(customShortcut, {$event: event});
           }
         });
       }

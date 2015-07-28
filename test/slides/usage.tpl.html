@@ -8,15 +8,27 @@
 &lt;/body&gt;
 </pre>
 
-<pre w11k-pretty-print lang="js">
-angular.module("demo").constant('slidesConfig', {
-  slides: [
+<pre w11k-pretty-print lang="js" w11k-event-toggle="src-js">
+angular.module("demo").run(function (slidesConfig) {
+  slidesConfig.slides: [
     'title',
     'about',
     'end'
-  ],
-  slideTemplatePrefix: 'slides/',
-  slideTemplateSuffix: '.tpl.html'
+  ];
+  slidesConfig.slideTemplatePrefix: 'slides/',
+  slidesConfig.slideTemplateSuffix: '.tpl.html'
+});
+</pre>
+
+<pre w11k-pretty-print lang="typescript" w11k-event-toggle="src-ts">
+angular.module("demo").run(function (slidesConfig :any) {
+  slidesConfig.slides: [
+    'title',
+    'about',
+    'end'
+  ];
+  slidesConfig.slideTemplatePrefix: 'slides/',
+  slidesConfig.slideTemplateSuffix: '.tpl.html'
 });
 </pre>
   </div>
