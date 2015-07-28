@@ -229,6 +229,10 @@ angular.module('w11k.slides').directive('w11kSlides', [
           if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
             return;
           }
+          var tagName = event.target.tagName;
+          if (tagName === 'INPUT' || tagName === 'TEXTAREA') {
+            return;
+          }
 
           // right or page down
           if (event.keyCode === 39 || event.keyCode === 34) {
