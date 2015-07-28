@@ -1,5 +1,22 @@
 # w11k-slides Changelog
 
+<a name="0.11.0"></a>
+## 0.11.0 (2015-07-28)
+
+
+### Bug Fixes
+
+* **corner-ribbon:** fix horizontal scroll in firefox ([e6355bec](https://github.com/w11k/w11k-slides/commit/e6355bec31f4544e3c4fa0a0b6b2ed358d89d6b0))
+* **hotkeys:** do not trigger hotkey action if cursor is in input field ([8e269aed](https://github.com/w11k/w11k-slides/commit/8e269aed3089cf7d92cb3aee32002c87e7187ad1))
+
+
+### Features
+
+* **dependencies:** update dependency to angular to 1.4.x ([f4dcef34](https://github.com/w11k/w11k-slides/commit/f4dcef3417b40063d356734d8be1519922ca9921))
+* **event-toggle:** add w11k-event-toggle directive ([c8b098d0](https://github.com/w11k/w11k-slides/commit/c8b098d09444508f514b0af8c4d7bc81b73c3745))
+* **source-snippets:** add source-snippets service to toggle visibility of javascript and typescript examples ([65e46dcb](https://github.com/w11k/w11k-slides/commit/65e46dcb4f21c76db5a9f8a5eb8c779d9e752a3a))
+
+
 <a name="0.10.3"></a>
 ## 0.10.3 (2015-05-13)
 

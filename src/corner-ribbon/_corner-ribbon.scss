@@ -1,16 +1,18 @@
 @import "compass";
 
+body {
+  overflow-x: hidden; // workaround for FF to avoid horizontal scrolling
+}
+
 .w11k-corner-ribbon, .slides .slide .corner-ribbon {
   position: absolute;
   top: 0;
   right: 0;
   padding: 0;
   margin: 0;
-  height: 2.3em;
   z-index: 10;
 
   & > .content {
-    position: absolute;
     top: 0;
     right: 0;
     z-index: 9999;
