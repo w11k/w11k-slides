@@ -47,6 +47,8 @@ gulp.task('templates', ['clean'], function () {
   var templates = gulp.src(paths.templates)
     .pipe(minifyHtml({ empty: true }))
     .pipe(html2js({
+      base: 'src',
+      quoteChar: '\'',
       outputModuleName: 'w11k.slides.template',
       useStrict: true
     }));
