@@ -1,7 +1,17 @@
 # w11k-slides Changelog
 
+<a name="0.12.2"></a>
+## [0.12.2](https://github.com/w11k/w11k-slides/compare/0.12.1...v0.12.2) (2015-10-12)
+
+
+### Bug Fixes
+
+* **settings:** remove duplicated source-snippets service ([df6251f](https://github.com/w11k/w11k-slides/commit/df6251f))
+
+
+
 <a name="0.12.1"></a>
-## 0.12.1 (2015-10-12)
+## [0.12.1](https://github.com/w11k/w11k-slides/compare/0.12.0...v0.12.1) (2015-10-12)
 
 
 ### Bug Fixes
@@ -10,7 +20,7 @@
 
 
 <a name="0.12.0"></a>
-## 0.12.0 (2015-10-12)
+## [0.12.0](https://github.com/w11k/w11k-slides/compare/0.11.0...v0.12.0) (2015-10-12)
 
 
 ### Features
