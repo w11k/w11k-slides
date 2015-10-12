@@ -6,10 +6,10 @@
   module.constant('slidesConfig', {
     slides: [],
     slideTemplatePrefix: 'slides/content/',
-    slideTemplateSuffix: '.tpl.html',
+    slideTemplateSuffix: '.html',
     masters: {},
     footer: {
-      templateUrl: 'footer/footer.tpl.html',
+      templateUrl: 'footer/footer.html',
       left: '',
       middle: '',
       right: '$index + 1'

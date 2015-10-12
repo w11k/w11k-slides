@@ -33,7 +33,7 @@
 
     function mapSlidesConfig() {
       var prefix = slidesConfig.slideTemplatePrefix || 'slides/content/';
-      var suffix = slidesConfig.slideTemplateSuffix || '.tpl.html';
+      var suffix = slidesConfig.slideTemplateSuffix || '.html';
 
       slides = slidesConfig.slides.map(function (slide) {
         var slideObject = {
@@ -170,7 +170,7 @@
     function ($location, $window, $document, SlidesService, $rootScope, slidesConfig, $injector) {
       return {
         restrict: 'EA',
-        templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.tpl.html',
+        templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.html',
         replace: true,
         link: function (scope, jqElement) {
           var element = jqElement[0];
