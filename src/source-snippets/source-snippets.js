@@ -1,55 +1,59 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('w11k.slides').config(['slidesConfig', function (slidesConfig) {
-  slidesConfig.shortcuts = slidesConfig.shortcuts || {};
+  var module = angular.module('w11k.slides');
 
-  slidesConfig.shortcuts['76'] = ['SourceSnippets', function (SourceSnippets) {
-    SourceSnippets.toggle();
-  }];
-}]);
+  module.config(['slidesConfig', function (slidesConfig) {
+    slidesConfig.shortcuts = slidesConfig.shortcuts || {};
 
-angular.module('w11k.slides').run(['SourceSnippets', function (SourceSnippets) {
-  // just for eager creation
-  SourceSnippets.init();
-}]);
+    slidesConfig.shortcuts['76'] = ['SourceSnippets', function (SourceSnippets) {
+      SourceSnippets.toggle();
+    }];
+  }]);
 
-angular.module('w11k.slides').service('SourceSnippets', ['$rootScope', function ($rootScope) {
-  var states = {
-    'jsOnly': {
-      js: true,
-      ts: false,
-      next: 'tsOnly'
-    },
-    'tsOnly': {
-      js: false,
-      ts: true,
-      next: 'jsAndTs'
-    },
-    'jsAndTs': {
-      js: true,
-      ts: true,
-      next: 'jsOnly'
-    }
-  };
+  module.run(['SourceSnippets', function (SourceSnippets) {
+    // just for eager creation
+    SourceSnippets.init();
+  }]);
 
-  var currentState = states.jsOnly;
+  module.service('SourceSnippets', ['$rootScope', function ($rootScope) {
+    var states = {
+      'jsOnly': {
+        js: true,
+        ts: false,
+        next: 'tsOnly'
+      },
+      'tsOnly': {
+        js: false,
+        ts: true,
+        next: 'jsAndTs'
+      },
+      'jsAndTs': {
+        js: true,
+        ts: true,
+        next: 'jsOnly'
+      }
+    };
 
-  $rootScope.$on('src-js-current', function (event, callback) {
-    callback(currentState.js);
-  });
+    var currentState = states.jsOnly;
 
-  $rootScope.$on('src-ts-current', function (event, callback) {
-    callback(currentState.ts);
-  });
+    $rootScope.$on('src-js-current', function (event, callback) {
+      callback(currentState.js);
+    });
 
-  this.toggle = function () {
-    currentState = states[currentState.next];
+    $rootScope.$on('src-ts-current', function (event, callback) {
+      callback(currentState.ts);
+    });
 
-    $rootScope.$broadcast('src-js', currentState.js);
-    $rootScope.$broadcast('src-ts', currentState.ts);
-  };
+    this.toggle = function () {
+      currentState = states[currentState.next];
 
-  this.init = function () {
-    // nothing to do here at the moment
-  };
-}]);
+      $rootScope.$broadcast('src-js', currentState.js);
+      $rootScope.$broadcast('src-ts', currentState.ts);
+    };
+
+    this.init = function () {
+      // nothing to do here at the moment
+    };
+  }]);
+}());

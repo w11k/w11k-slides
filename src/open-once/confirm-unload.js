@@ -1,31 +1,35 @@
-'use strict';
+(function() {
+  'use strict';
 
-angular.module('w11k.slides').service('UnloadConfirm', ['$window', function ($window) {
-  var service = {
-    counter: 0,
+  var module = angular.module('w11k.slides');
 
-    increment: function () {
-      this.counter++;
-    },
+  module.service('UnloadConfirm', ['$window', function ($window) {
+    var service = {
+      counter: 0,
 
-    decrement: function () {
-      this.counter--;
-    }
-  };
+      increment: function () {
+        this.counter++;
+      },
 
-  var unloadListener = function (event) {
-    if (service.counter > 0) {
-      var hint = 'Es wurde mindestens ein Beispiel geöffnet. Wenn die Seite neu geladen wird, müssen beim erneuten Öffnen auch die Beispiele neu geladen werden.';
-      event.returnValue = hint;
-      return hint;
-    } else {
-      event.preventDefault();
-      return;
-    }
-  };
+      decrement: function () {
+        this.counter--;
+      }
+    };
 
-  $window.onbeforeunload = unloadListener;
+    var unloadListener = function (event) {
+      if (service.counter > 0) {
+        var hint = 'Es wurde mindestens ein Beispiel geöffnet. Wenn die Seite neu geladen wird, müssen beim erneuten Öffnen auch die Beispiele neu geladen werden.';
+        event.returnValue = hint;
+        return hint;
+      } else {
+        event.preventDefault();
+        return;
+      }
+    };
 
-  return service;
+    $window.onbeforeunload = unloadListener;
 
-}]);
+    return service;
+
+  }]);
+}());
