@@ -43,7 +43,7 @@ gulp.task('clean', function() {
   return del(['dist', 'temp']);
 });
 
-gulp.task('templates', ['clean'], function templates() {
+gulp.task('templates', ['clean'], function () {
   var templates = gulp.src(paths.templates)
     .pipe(minifyHtml({ empty: true }))
     .pipe(html2js({
@@ -70,11 +70,11 @@ gulp.task('templates', ['clean'], function templates() {
   return merge(templatesCopied, templatesNonMin, templatesMin);
 });
 
-gulp.task('sass', ['clean'], function styles() {
+gulp.task('sass', ['clean'], function () {
   var sassCompiled = gulp.src('src/w11k-slides.scss')
     .pipe(sourcemaps.init())
     .pipe(compass({
-      css: 'src',
+      css: 'temp',
       sass: 'src'
     }))
     .pipe(minifyCss())
@@ -119,7 +119,7 @@ gulp.task('styles', ['less', 'sass']);
 gulp.task('scripts', ['clean'], function scripts() {
   var source = gulp.src(paths.scripts)
     .pipe(ngAnnotate({
-      single_quotes: true
+      'single_quotes': true
     }));
 
   var nonMin = source
@@ -150,7 +150,6 @@ gulp.task('server', [], function () {
 
 gulp.task('bump', function(){
   var type = argv.bump;
-  console.log(argv);
 
   gulp.src(['./package.json', './bower.json'])
     .pipe(bump({ type: type }))
