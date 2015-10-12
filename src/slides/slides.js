@@ -224,24 +224,9 @@
           element.querySelector('div.overlay').classList.toggle('active');
         }
 
-        if (angular.isDefined($window.localStorage)) {
-          if (angular.isDefined($window.localStorage[localStorageModeKey])) {
-            mode = $window.localStorage[localStorageModeKey];
-            setMode(mode);
-          }
-        }
-
-        $document.bind('keydown', function (event) {
+        function runDefaultAction(event) {
           var action;
           var actionType;
-
-          if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
-            return;
-          }
-          var tagName = event.target.tagName;
-          if (tagName === 'INPUT' || tagName === 'TEXTAREA') {
-            return;
-          }
 
           // right or page down
           if (event.keyCode === 39 || event.keyCode === 34) {
@@ -285,10 +270,37 @@
               }
             });
           }
+        }
 
-          var customShortcut = slidesConfig.shortcuts[event.keyCode];
-          if (angular.isFunction(customShortcut) || angular.isArray(customShortcut)) {
-            $injector.invoke(customShortcut, {$event: event});
+        if (angular.isDefined($window.localStorage)) {
+          if (angular.isDefined($window.localStorage[localStorageModeKey])) {
+            mode = $window.localStorage[localStorageModeKey];
+            setMode(mode);
+          }
+        }
+
+        $document.bind('keydown', function (event) {
+
+          if (event.altKey || event.ctrlKey || event.shiftKey || event.metaKey) {
+            return;
+          }
+
+          var tagName = event.target.tagName;
+          if (tagName === 'INPUT' || tagName === 'TEXTAREA' || event.target.contentEditable === 'true') {
+            return;
+          }
+
+          if (slidesConfig.shortcuts) {
+            var customShortcut = slidesConfig.shortcuts[event.keyCode];
+            if (angular.isFunction(customShortcut) || angular.isArray(customShortcut)) {
+              $injector.invoke(customShortcut, {$event: event});
+            }
+            else {
+              runDefaultAction(event);
+            }
+          }
+          else {
+            runDefaultAction(event);
           }
         });
       }
