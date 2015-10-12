@@ -1,42 +1,30 @@
-(function () {
+(function() {
   'use strict';
-
-  /* @ngInject */
-  function configureShortcuts(slidesConfig) {
-    slidesConfig.shortcuts = slidesConfig.shortcuts || {};
-
-    slidesConfig.shortcuts['76'] = ['SourceSnippets', function (SourceSnippets) {
-      SourceSnippets.toggle();
-    }];
-  }
-
-  /* @ngInject */
-  function initSnippets(SourceSnippets) {
-    // just for eager creation
-    SourceSnippets.init();
-  }
 
   /* @ngInject */
   function SourceSnippets($rootScope) {
     var states = {
-      'jsOnly': {
+      'js': {
         js: true,
         ts: false,
+        name: 'js',
         next: 'tsOnly'
       },
-      'tsOnly': {
+      'ts': {
         js: false,
         ts: true,
-        next: 'jsAndTs'
+        name: 'ts',
+        next: 'js+ts'
       },
-      'jsAndTs': {
+      'js+ts': {
         js: true,
         ts: true,
-        next: 'jsOnly'
+        name: 'js+ts',
+        next: 'js'
       }
     };
 
-    var currentState = states.jsOnly;
+    var currentState = states.js;
 
     $rootScope.$on('src-js-current', function (event, callback) {
       callback(currentState.js);
@@ -51,15 +39,21 @@
 
       $rootScope.$broadcast('src-js', currentState.js);
       $rootScope.$broadcast('src-ts', currentState.ts);
-    };
+    }.bind(this);
 
-    this.init = function () {
-      // nothing to do here at the moment
-    };
+    this.set = function (state) {
+      currentState = states[state];
+
+      $rootScope.$broadcast('src-js', currentState.js);
+      $rootScope.$broadcast('src-ts', currentState.ts);
+    }.bind(this);
+
+    this.get = function () {
+      return currentState.name;
+    }.bind(this);
   }
-  var module = angular.module('w11k.slides');
 
-  module.config(configureShortcuts);
-  module.run(initSnippets);
+  var module = angular.module('w11k.slides');
   module.service('SourceSnippets', SourceSnippets);
 }());
+

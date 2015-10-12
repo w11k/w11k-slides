@@ -1,0 +1,6 @@
+<div class="slides export" ng-controller="SlidesCtrl as sc">
+  <div class="overlay"></div>
+  <div class="slide-container" ng-repeat="slide in sc.slides" ng-show="slide.active">
+    <div ng-include="slide.template"></div>
+  </div>
+</div>

@@ -1,5 +1,21 @@
 # w11k-slides Changelog
 
+<a name="0.12.0"></a>
+## 0.12.0 (2015-10-12)
+
+
+### Features
+
+* **settings:** add default implementations for language and code-snippets settings ([d70bd53](https://github.com/w11k/w11k-slides/commit/d70bd53))
+* **shortcuts:** prefer custom shortcuts, run default action only if no custom shortcut to allow  ([27db787](https://github.com/w11k/w11k-slides/commit/27db787))
+* **templates:** change default file extension for templates from '.tpl.html' to '.html' ([106b4ed](https://github.com/w11k/w11k-slides/commit/106b4ed))
+
+
+### BREAKING CHANGES
+
+* templates: Default file extension for slides changed from '.tpl.html' to '.html'. Rename your slide files or change back to old extension via slidesConfig.slidesTemplateSuffix
+
+
 <a name="0.11.0"></a>
 ## 0.11.0 (2015-07-28)
 
