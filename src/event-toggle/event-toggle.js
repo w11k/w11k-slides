@@ -1,9 +1,8 @@
 (function() {
   'use strict';
 
-  var module = angular.module('w11k.slides');
-
-  module.directive('w11kEventToggle', ['$rootScope', function ($rootScope) {
+  /* @ngInject */
+  function w11kEventToggle($rootScope) {
     return {
       restrict: 'A',
       link: function (scope, jqElement, attrs) {
@@ -28,6 +27,8 @@
         });
       }
     };
-  }]);
-}());
+  }
 
+  var module = angular.module('w11k.slides');
+  module.directive('w11kEventToggle', w11kEventToggle);
+}());

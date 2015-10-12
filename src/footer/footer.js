@@ -1,9 +1,8 @@
 (function() {
   'use strict';
 
-  var module = angular.module('w11k.slides');
-
-  module.directive('w11kFooter', ['slidesConfig', function (slidesConfig) {
+  /* @ngInject */
+  function w11kFooter(slidesConfig) {
     return {
       restrict: 'EA',
       templateUrl: slidesConfig.footer.templateUrl || 'footer/footer.tpl.html',
@@ -25,5 +24,8 @@
         setContent(right, attrs.right || slidesConfig.footer.right);
       }
     };
-  }]);
+  }
+
+  var module = angular.module('w11k.slides');
+  module.directive('w11kFooter', w11kFooter);
 }());

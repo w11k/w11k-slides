@@ -1,22 +1,23 @@
 (function () {
   'use strict';
 
-  var module = angular.module('w11k.slides');
-
-  module.config(['slidesConfig', function (slidesConfig) {
+  /* @ngInject */
+  function configureShortcuts(slidesConfig) {
     slidesConfig.shortcuts = slidesConfig.shortcuts || {};
 
     slidesConfig.shortcuts['76'] = ['SourceSnippets', function (SourceSnippets) {
       SourceSnippets.toggle();
     }];
-  }]);
+  }
 
-  module.run(['SourceSnippets', function (SourceSnippets) {
+  /* @ngInject */
+  function initSnippets(SourceSnippets) {
     // just for eager creation
     SourceSnippets.init();
-  }]);
+  }
 
-  module.service('SourceSnippets', ['$rootScope', function ($rootScope) {
+  /* @ngInject */
+  function SourceSnippets($rootScope) {
     var states = {
       'jsOnly': {
         js: true,
@@ -55,5 +56,10 @@
     this.init = function () {
       // nothing to do here at the moment
     };
-  }]);
+  }
+  var module = angular.module('w11k.slides');
+
+  module.config(configureShortcuts);
+  module.run(initSnippets);
+  module.service('SourceSnippets', SourceSnippets);
 }());

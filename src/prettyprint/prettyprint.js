@@ -1,9 +1,8 @@
 (function () {
   'use strict';
 
-  var module = angular.module('w11k.slides');
-
-  module.directive('w11kPrettyPrint', ['$window', '$document', function ($window, $document) {
+  /* @ngInject */
+  function w11kPrettyPrint($window) {
 
     var escapeHTML = function (html) {
       if (angular.isUndefined(html)) {
@@ -45,5 +44,8 @@
 
       }
     };
-  }]);
+  }
+
+  var module = angular.module('w11k.slides');
+  module.directive('w11kPrettyPrint', w11kPrettyPrint);
 }());

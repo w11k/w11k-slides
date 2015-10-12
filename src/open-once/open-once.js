@@ -1,9 +1,8 @@
 (function() {
   'use strict';
 
-  var module = angular.module('w11k.slides');
-
-  module.directive('w11kOpenOnce', ['$window', 'UnloadConfirm', function ($window, UnloadConfirm) {
+  /* @ngInject */
+  function w11kOpenOnce($window, UnloadConfirm) {
     return {
       restrict: 'A',
       link: function (scope, element, attrs) {
@@ -27,5 +26,8 @@
         });
       }
     };
-  }]);
+  }
+
+  var module = angular.module('w11k.slides');
+  module.directive('w11kOpenOnce', w11kOpenOnce);
 }());
