@@ -1,6 +1,6 @@
 {
   "name": "w11k-slides",
-  "version": "0.12.1",
+  "version": "0.12.2",
   "description": "AngularJS module to create simple slide shows",
   "keywords": [
     "angular",
