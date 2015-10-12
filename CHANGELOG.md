@@ -1,5 +1,14 @@
 # w11k-slides Changelog
 
+<a name="0.12.1"></a>
+## 0.12.1 (2015-10-12)
+
+
+### Bug Fixes
+
+* **templates:** fix path of inlined templates ([754157c](https://github.com/w11k/w11k-slides/commit/754157c))
+
+
 <a name="0.12.0"></a>
 ## 0.12.0 (2015-10-12)
 
