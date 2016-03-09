@@ -1,4 +1,14 @@
+
 # w11k-slides Changelog
+
+<a name="0.12.3"></a>
+## [0.13.0](https://github.com/w11k/w11k-slides/compare/0.12.2...v0.13.0) (2016-03-09)
+
+
+### Features
+
+* **mode:** expose set and toggle mode (screen and export) via SlidesService ([c49fde8](https://github.com/w11k/w11k-slides/commit/c49fde8))
+
 
 <a name="0.12.2"></a>
 ## [0.12.2](https://github.com/w11k/w11k-slides/compare/0.12.1...v0.12.2) (2015-10-12)
