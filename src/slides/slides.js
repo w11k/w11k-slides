@@ -2,7 +2,7 @@
   'use strict';
 
   /* @ngInject */
-  function SlidesService(slidesConfig, $location, $rootScope) {
+  function SlidesService(slidesConfig, $location, $rootScope, $window) {
     var activeSlide;
 
     function activateFirstSlide() {
@@ -29,6 +29,9 @@
         slide.activate();
       }
     });
+
+    var localStorageModeKey = 'w11k-slides.mode';
+    var mode = 'export';
 
     function mapSlidesConfig() {
       var prefix = slidesConfig.slideTemplatePrefix || 'slides/content/';
@@ -116,6 +119,37 @@
         this.navigateTo(previous.name);
       }
     }.bind(this);
+
+    this.getMode = function () {
+      return mode;
+    }.bind(this);
+
+    this.setMode = function (newMode) {
+      mode = newMode;
+
+      if (angular.isDefined($window.localStorage)) {
+        $window.localStorage[localStorageModeKey] = mode;
+      }
+
+      $rootScope.$emit(this.events.modeChanged, mode);
+    }.bind(this);
+
+    this.toggleMode = function () {
+      var newMode;
+
+      if (mode === 'export') {
+        newMode = 'screen';
+      }
+      else if (mode === 'screen') {
+        newMode = 'export';
+      }
+
+      this.setMode(newMode);
+    }.bind(this);
+
+    this.events = {
+      modeChanged: 'w11k-slides.modeChanged'
+    };
   }
 
   /* @ngInject */
@@ -183,31 +217,13 @@
   }
 
   /* @ngInject */
-  function w11kSlidesDirective($window, $document, SlidesService, slidesConfig, $injector) {
+  function w11kSlidesDirective($window, $document, SlidesService, slidesConfig, $injector, $rootScope) {
     return {
       restrict: 'EA',
       templateUrl: slidesConfig.directiveTemplateUrl || 'slides/slides.html',
       replace: true,
       link: function (scope, jqElement) {
         var element = jqElement[0];
-
-        var localStorageModeKey = 'w11k-slides.mode';
-        var mode = 'export';
-
-        function toggleMode() {
-          if (mode === 'export') {
-            mode = 'screen';
-          }
-          else if (mode === 'screen') {
-            mode = 'export';
-          }
-
-          setMode(mode);
-
-          if (angular.isDefined($window.localStorage)) {
-            $window.localStorage[localStorageModeKey] = mode;
-          }
-        }
 
         function setMode(mode) {
           if (mode === 'export') {
@@ -218,6 +234,10 @@
             element.classList.remove('export');
             element.classList.add('screen');
           }
+        }
+
+        function toggleMode() {
+          SlidesService.toggleMode();
         }
 
         function toggleOverlay() {
@@ -272,12 +292,11 @@
           }
         }
 
-        if (angular.isDefined($window.localStorage)) {
-          if (angular.isDefined($window.localStorage[localStorageModeKey])) {
-            mode = $window.localStorage[localStorageModeKey];
-            setMode(mode);
-          }
-        }
+        setMode(SlidesService.getMode());
+
+        $rootScope.$on(SlidesService.events.modeChanged, function (event, mode) {
+          setMode(mode);
+        });
 
         $document.bind('keydown', function (event) {
 
